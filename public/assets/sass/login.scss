@@ -1,0 +1,49 @@
+main {
+    &#login {
+        background-color: var(--bg-color);
+        height: 100vh;
+        width: 100%;
+        div {
+            &.overflow {
+                padding: 20px;
+                align-items: center;
+                width: 100%;
+                section {
+                    &.signin {
+                        display: none;
+                    }
+                    &.access {
+                        display: flex;
+                    }
+                    &.forget {
+                        display: none;
+                    }
+                    flex-direction: column;
+                    background-color: var(--white);
+                    border: var(--border);
+                    border-radius: var(--radius);
+                    padding: 20px;
+                    width: 100%;
+                    h2 {
+                        color: var(--text-color);
+                        text-align: center;
+                        text-transform: uppercase;
+                    }
+                    form {
+                        flex-direction: column;
+                        margin-top: 20px;
+                        @include field;
+                        a {
+                            text-align: right;
+                        }
+                        hr {
+                            border: var(--border);
+                            width: 100%;
+                        }
+                        @include wrap;
+                    }
+                }
+            }
+        }
+    }
+}
