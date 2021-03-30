@@ -1,0 +1,73 @@
+@mixin field {
+    .field {
+        flex-direction: column;
+        border: var(--border);
+        border-radius: var(--radius);
+        padding: 10px;
+        margin: 10px 0;
+        label {
+            font-weight: 500;
+        }
+        input {
+            border: none;
+            padding: 5px 0;
+            outline: none;
+        }
+    }
+}
+
+@mixin wrap {
+    .wrap {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 20px;
+        align-items: center;
+        a {
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+        button {
+            background-color: var(--btn-green);
+            border-radius: 100px;
+            border: none;
+            height: 56px;
+            width: 56px;
+            padding: 3px;
+            outline: none;
+            cursor: pointer;
+            &:hover {
+                background-color: #6eaf99;
+            }
+            &:active {
+                background-color: #436d5f;
+            }
+            svg {
+                height: 50px;
+                width: 50px;
+            }
+            span {
+                display: none;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        .wrap {
+            button {
+                border-radius: var(--radius);
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                span {
+                    display: flex;
+                    color: var(--white);
+                    font-weight: 400;
+                    font-size: 30px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}

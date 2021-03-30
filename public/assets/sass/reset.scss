@@ -1,0 +1,21 @@
+* {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+    font-family: 'Fonte', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+//Zero Margin
+body, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+//Setting to Flex Layout
+body, main, div, section, header, article, footer, form, button {
+    display: flex;
+}
+
+//Link style
+a {
+    text-decoration: none;
+}
