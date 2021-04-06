@@ -8,22 +8,45 @@ main {
                 padding: 20px;
                 align-items: center;
                 width: 100%;
+                flex-direction: row;
+                overflow: hidden;
+                justify-content: center;
                 section {
-                    &.signin {
-                        display: none;
-                    }
-                    &.access {
-                        display: flex;
-                    }
-                    &.forget {
-                        display: none;
-                    }
                     flex-direction: column;
                     background-color: var(--white);
                     border: var(--border);
                     border-radius: var(--radius);
                     padding: 20px;
-                    width: 100%;
+                    width: 90%;
+                    transition: 1s;
+                    box-shadow: 10px 10px 10px rgb(0 0 0 / 50%);
+                    &.signup {
+                        position: absolute;
+                        left: -1000px;
+                        z-index: 0;
+                        &.show {
+                            left: 25px;
+                            z-index: 2;
+                        }
+                    }
+                    &.access {
+                        position: absolute;
+                        left: -1000px;
+                        z-index: 1;
+                        &.show {
+                            left: 25px;
+                            z-index: 2;
+                        }
+                    }
+                    &.forget {
+                        position: absolute;
+                        right: 1000px;
+                        z-index: 0;
+                        &.show {
+                            right: 25px;
+                            z-index: 2;
+                        }
+                    }
                     h2 {
                         color: var(--text-color);
                         text-align: center;
