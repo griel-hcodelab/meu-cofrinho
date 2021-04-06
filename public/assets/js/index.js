@@ -1,2 +1,6 @@
 import './firebase';
-import './login';
+
+import './ClassLogin';
+import './ClassUtils';
+
+import './FunctionLogin';
