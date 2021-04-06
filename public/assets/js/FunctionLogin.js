@@ -32,6 +32,6 @@ if (signupForm) {
             loginFn.createAccount(name, email, password);
         }
     
-        
+        //
     });
 }
