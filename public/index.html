@@ -21,6 +21,8 @@
   <meta name="msapplication-TileColor" content="#3C2E80" />
   <meta name="msapplication-TileImage" content="/assets/img/ms-icon-144x144.png" />
   <meta name="theme-color" content="#3C2E80" />
+  <link rel="preload" href="assets/css/stylesheet.css" as="style" />
+  <link rel="stylesheet" href="assets/css/stylesheet.css" />
   <title>Meu Cofrinho</title>
 </head>
 <body>
@@ -139,7 +141,7 @@
 					<div>
 					   <p>Data: <span>05/04/2021</span></p>
 					   <p>Valor: <span>R$400,00</span></p>
-					   <p>Onde: <span>Gavetat</span></p>
+					   <p>Onde: <span>Gaveta</span></p>
 					</div>
 					<div>
 						<button type="button">
@@ -150,16 +152,45 @@
 			 </div>
 
 			<footer>
-				<a href="#">
-					<img src="assets/svg/back.svg" alt="Voltar" />
-					<span>voltar</span>
-				</a>
-				<button type="button">
-					<img src="assets/svg/add_value.svg" alt="Adicionar Valor" />
-					adicionar valor
-				</button>
+				<div class="buttons">
+					<a href="#">
+						<img src="assets/svg/back.svg" alt="Voltar" />
+						<span>voltar</span>
+					</a>
+					<button type="button">
+						<img src="assets/svg/add_value.svg" alt="Adicionar Valor" />
+						adicionar valor
+					</button>
+				</div>
+				<div class="add_values">
+					<form>
+						<p>adicionar uma quantia</p>
+						<div class="fields">
+							<div class="field">
+								<label for="vault_add_cash">Quanto você vai adicionar?</label>
+								<input type="text" name="vault_add_cash" id="vault_add_cash" placeholder="Digite o valor" />
+							</div>
+							<div class="field">
+								<label for="vault_add_local">Onde está o dinheiro?</label>
+								<input type="text" name="vault_add_local" id="vault_add_local" placeholder="Banco, Carteira, Gaveta" />
+							</div>
+						</div>
+						<div class="buttons">
+							<a href="#">
+								<img src="assets/svg/down.svg" alt="Cancelar" />
+								<span>cancelar</span>
+							</a>
+							<button type="submit">
+								<img src="assets/svg/save.svg" alt="Salvar" />
+								salvar
+							</button>
+						</div>
+					</form>
+				</div>
+
 			</footer>
 		</section>
 	</main>
+	<script src="javascript.js" defer></script>
 </body>
 </html>

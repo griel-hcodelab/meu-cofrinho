@@ -132,7 +132,7 @@ main#login div.overflow section.signup {
   z-index: 0;
 }
 main#login div.overflow section.signup.show {
-  left: 25px;
+  left: 0;
   z-index: 2;
 }
 main#login div.overflow section.access {
@@ -141,7 +141,7 @@ main#login div.overflow section.access {
   z-index: 1;
 }
 main#login div.overflow section.access.show {
-  left: 25px;
+  left: 0;
   z-index: 2;
 }
 main#login div.overflow section.forget {
@@ -150,7 +150,7 @@ main#login div.overflow section.forget {
   z-index: 0;
 }
 main#login div.overflow section.forget.show {
-  right: 25px;
+  right: 0;
   z-index: 2;
 }
 main#login div.overflow section h2 {

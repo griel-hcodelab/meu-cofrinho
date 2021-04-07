@@ -27,7 +27,7 @@ main {
                         left: -1000px;
                         z-index: 0;
                         &.show {
-                            left: 25px;
+                            left: 0;
                             z-index: 2;
                         }
                     }
@@ -36,7 +36,7 @@ main {
                         left: -1000px;
                         z-index: 1;
                         &.show {
-                            left: 25px;
+                            left: 0;
                             z-index: 2;
                         }
                     }
@@ -45,7 +45,7 @@ main {
                         right: 1000px;
                         z-index: 0;
                         &.show {
-                            right: 25px;
+                            right: 0;
                             z-index: 2;
                         }
                     }
