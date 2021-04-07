@@ -15,18 +15,19 @@
             <section class="signup">
                 <h2>faça seu cadastro</h2>
                 <form>
+                  <div class="alert"></div>
                     <div class="field">
-                        <label for="signin-name">Nome Completo:</label>
-                        <input type="text" name="signin-name" id="signin-name" required />
+                        <label for="signup_name">Nome Completo:</label>
+                        <input type="text" name="signup_name" id="signup_name" required />
                     </div>
                     <div class="fields">
                         <div class="field">
-                            <label for="signin-email">E-Mail de Acesso:</label>
-                            <input type="email" name="signin-email" id="signin-email" required />
+                            <label for="signup_email">E-Mail de Acesso:</label>
+                            <input type="email" name="signup_email" id="signup_email" required />
                         </div>
                         <div class="field">
-                            <label for="signin-password">Senha:</label>
-                            <input type="password" name="signin-password" id="signin-password" required />
+                            <label for="signup_password">Senha:</label>
+                            <input type="password" name="signup_password" id="signup_password" required />
                         </div>
                     </div>
                     <div class="wrap">
@@ -52,18 +53,19 @@
             <section class="access">
                 <h2>acesse sua conta</h2>
                 <form>
+                  <div class="alert"></div>
                     <div class="field">
-                        <label for="access-email">E-Mail de Acesso:</label>
-                        <input type="email" name="access-email" id="access-email" placeholder="seu@email" required/>
+                        <label for="access_email">E-Mail de Acesso:</label>
+                        <input type="email" name="access_email" id="access_email" placeholder="seu@email" required/>
                     </div>
                     <div class="field">
-                        <label for="password">Senha:</label>
-                        <input type="password" name="password" id="password" placeholder="******" required />
+                        <label for="access_password">Senha:</label>
+                        <input type="password" name="access_password" id="access_password" placeholder="******" required />
                     </div>
                     <a href="#forget">Esqueceu sua senha?</a>
                     <div class="wrap">
                         <a href="#signup">Crie sua Conta</a>
-                        <button type="button" aria-label="Acessar sua conta">
+                        <button type="submit" aria-label="Acessar sua conta">
                             <svg id="_057-check" data-name="057-check" xmlns="http://www.w3.org/2000/svg" width="78.661" height="78.661" viewBox="0 0 78.661 78.661">
                                 <g id="Grupo_263" data-name="Grupo 263">
                                   <g id="Grupo_262" data-name="Grupo 262">
@@ -83,13 +85,15 @@
             </section>
             <section class="forget">
                 <h2>recupere sua conta</h2>
+                <form>
+                  <div class="alert"></div>
                 <div class="field">
-                    <label for="forget-email">E-Mail de Acesso:</label>
-                    <input type="email" name="forget-email" id="forget-email" required />
+                    <label for="forget_email">E-Mail de Acesso:</label>
+                    <input type="email" name="forget_email" id="forget_email" required />
                 </div>
                 <div class="wrap">
                     <a href="#access">voltar</a>
-                    <button type="button" aria-label="Recuperar sua conta">
+                    <button type="submit" aria-label="Recuperar sua conta">
                         <svg id="_057-check" data-name="057-check" xmlns="http://www.w3.org/2000/svg" width="78.661" height="78.661" viewBox="0 0 78.661 78.661">
                             <g id="Grupo_263" data-name="Grupo 263">
                               <g id="Grupo_262" data-name="Grupo 262">
@@ -104,6 +108,7 @@
                           </svg>
                           <span>enviar</span>
                     </button>
+                  </form>
                 </div>
             </section>
         </div>
