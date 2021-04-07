@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <g id="add_value" transform="translate(-211 -700)">
+    <g id="_005-profits" data-name="005-profits" transform="translate(217.508 710.718)">
+      <g id="Grupo_30" data-name="Grupo 30" transform="translate(0 0)">
+        <path id="Caminho_37" data-name="Caminho 37" d="M22.738,95.357a.96.96,0,0,0-.208-.312c-.006-.006-.011-.007-.016-.011a.977.977,0,0,0-.3-.2.959.959,0,0,0-.283-.058c-.029,0-.053-.015-.081-.015H14.186a.958.958,0,1,0,0,1.917h5.364l-7.587,7.63-2.887-3.7a.958.958,0,0,0-1.415-.106L.3,107.48a.958.958,0,0,0,1.318,1.392l6.6-6.244,2.907,3.722a.959.959,0,0,0,1.436.086l8.34-8.387v5.344a.958.958,0,0,0,1.917,0V95.725h0A.984.984,0,0,0,22.738,95.357Z" transform="translate(0 -94.766)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Elipse_16" data-name="Elipse 16" transform="translate(211 700)" fill="none" stroke="#fff" stroke-width="3">
+      <circle cx="18" cy="18" r="18" stroke="none"/>
+      <circle cx="18" cy="18" r="16.5" fill="none"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/apple-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/apple-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/apple-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/apple-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="msapplication-TileColor" content="#3C2E80" />
+  <meta name="msapplication-TileImage" content="/assets/img/ms-icon-144x144.png" />
+  <meta name="theme-color" content="#3C2E80" />
+  <title>Meu Cofrinho</title>
+</head>
+<body>
+	<header>
+		<button type="button">
+			<img src="assets/svg/menubtn.svg" alt="Menu de Opções" />
+		</button>
+		<nav>
+			 <img src="assets/img/blank-profile.png" alt="Usuário da Silva" />
+			 <strong>usuário da silva</strong>
+			 <ul>
+				 <li>
+					 <a href="perfil.html">editar perfil</a>
+				 </li>
+				 <li>
+					 <a href="sair.html">sair</a>
+				 </li>
+			 </ul>
+		</nav>
+		<div class="logo">
+			<img src="assets/svg/vault.svg" alt="Porquinho" />
+			<h1>meu cofrinho</h1>
+		</div>
+	</header>
+	<main>
+		<section id="vaults">
+			<header>
+				<h2>meus cofrinhos</h2>
+			</header>
+			<details>
+				<summary>aluguel</summary>
+				<p>Necessário: <strong>R$600,00</strong></p>
+				<p>Você tem: <strong>R$400,00</strong></p>
+				<a href="#edit1">
+					<img src="assets/svg/edit.svg" alt="Editar aluguel" />
+					<span>editar seu cofrinho</span>
+				</a>
+			</details>
+			<footer>
+				<a href="#new">
+					<img src="assets/svg/add.svg" alt="Novo Cofrinho" />
+					<h3>novo cofrinho</h3>
+				</a>
+			</footer>
+		</section>
+
+		<section id="new_vault">
+			<header>
+				<h2>novo cofrinho</h2>
+			</header>
+			<form>
+				<div>
+					<div class="fields">
+						<div class="field">
+							<label for="vault_identify">Identificação do cofrinho:</label>
+							<input type="text" name="vault_identify" id="vault_identify" placeholder="Digite um nome" required />
+						</div>
+						<div class="field">
+							<label for="vault_value">Quanto você precisa?</label>
+							<input type="text" name="vault_value" id="vault_value" placeholder="Digite o valor" required />
+						</div>
+					</div>
+					<strong>adicionar uma quantia</strong>
+					<small>você pode adicionar depois</small>
+					<div class="fields">
+						<div class="field">
+							<label for="vault_add_cash">Quanto você vai adicionar?</label>
+							<input type="text" name="vault_add_cash" id="vault_add_cash" placeholder="Digite o valor" />
+						</div>
+						<div class="field">
+							<label for="vault_add_local">Onde está o dinheiro?</label>
+							<input type="text" name="vault_add_local" id="vault_add_local" placeholder="Banco, Carteira, Gaveta" />
+						</div>
+					</div>
+				</div>
+				<footer>
+					<button type="submit">
+						<img src="assets/svg/save.svg" alt="Salvar Cofrinho" />
+						<span>salvar cofrinho</span>
+					</button>
+				</footer>
+			</form>
+		</section>
+
+
+		<section id="edit1">
+			<header>
+				<h2>aluguel</h2>
+			</header>
+
+			 <div>
+				 <h3>Dinheiro guardado para pagar o aluguel do mês</h3>
+				 <div class="values">
+					 <div class="value">
+						 <p>Valor:</p>
+						 <strong>R$600,00</strong>
+					 </div>
+					 <div class="value">
+						<p>Guardado: <span>R$400,00</span></p>
+					</div>
+				 </div>
+				 <hr />
+				 <div class="history">
+					 <div>
+						<p>Data: <span>06/04/2021</span></p>
+						<p>Valor: <span>R$100,00</span></p>
+						<p>Onde: <span>Banco Itaú</span></p>
+					 </div>
+					 <div>
+						 <button type="button">
+							 <img src="assets/svg/delete.svg" alt="Apagar reserva" />
+						 </button>
+					 </div>
+				 </div>
+				 <div class="history">
+					<div>
+					   <p>Data: <span>05/04/2021</span></p>
+					   <p>Valor: <span>R$400,00</span></p>
+					   <p>Onde: <span>Gavetat</span></p>
+					</div>
+					<div>
+						<button type="button">
+							<img src="assets/svg/delete.svg" alt="Apagar reserva" />
+						</button>
+					</div>
+				</div>
+			 </div>
+
+			<footer>
+				<a href="#">
+					<img src="assets/svg/back.svg" alt="Voltar" />
+					<span>voltar</span>
+				</a>
+				<button type="button">
+					<img src="assets/svg/add_value.svg" alt="Adicionar Valor" />
+					adicionar valor
+				</button>
+			</footer>
+		</section>
+	</main>
+</body>
+</html>
