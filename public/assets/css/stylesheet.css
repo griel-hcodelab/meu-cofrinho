@@ -42,11 +42,16 @@
 }
 :root {
   --bg-color: #612F74;
+  --header-color: #3C2E80;
+  --section-header-color: #EFEBF1;
   --text-color: #333;
   --white: #FFF;
   --border: 1px solid #333333;
-  --btn-green: #5A917F;
+  --btn-green: #247350;
+  --btn-purple: #362973;
+  --btn-cancel: #732424;
   --radius: 10px;
+  --space: 10px;
 }
 
 * {
@@ -60,7 +65,7 @@ body, h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-body, main, div, section, header, article, footer, form, button {
+body, main, div, section, header, article, footer, form, button, nav, ul, li, a {
   display: flex;
 }
 
@@ -174,6 +179,7 @@ main#login div.overflow section form .field {
   margin: 10px 0;
   width: 100%;
   transition: all 0.5s;
+  background-color: var(--white);
 }
 main#login div.overflow section form .field label {
   font-weight: 500;
@@ -182,6 +188,7 @@ main#login div.overflow section form .field input {
   border: none;
   padding: 5px 0;
   outline: none;
+  font-size: 20px;
 }
 main#login div.overflow section form .field.loading {
   background-color: #eee;
@@ -264,6 +271,437 @@ main#login div.overflow section form .wrap button span {
   }
   main#login div.overflow {
     max-width: 768px;
+  }
+}
+#app {
+  flex-direction: column;
+  background-color: var(--bg-color);
+}
+#app header {
+  background-color: var(--header-color);
+  height: 66px;
+  flex-direction: row;
+  padding: var(--space);
+  width: 100%;
+  justify-content: center;
+}
+#app header button {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: 10px;
+}
+#app header nav {
+  background-color: var(--header-color);
+  position: fixed;
+  top: 66px;
+  left: 0;
+  height: 100vh;
+  width: 95%;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space);
+  transform: translateX(-768px);
+  transition: ease-in 0.5s;
+}
+#app header nav div {
+  flex-direction: column;
+}
+#app header nav div.profile {
+  align-items: center;
+}
+#app header nav div.links {
+  align-items: center;
+}
+#app header nav img {
+  margin: calc(var(--space) * 3);
+  height: 160px;
+  width: 160px;
+}
+#app header nav strong {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+}
+#app header nav ul {
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  align-items: center;
+  bottom: 100px;
+  position: absolute;
+}
+#app header nav ul li a {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+#app header nav ul li + li {
+  margin-top: 40px;
+}
+#app header nav.open {
+  transition: ease-out 0.5s;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  transform: translateX(0px);
+}
+#app header div.logo {
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+#app header div.logo h1 {
+  display: none;
+  font-size: calc(var(--space) * 5);
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  margin: 0 var(--space);
+}
+#app main {
+  flex-direction: column;
+  padding: var(--space);
+  color: var(--text-color);
+}
+#app main section {
+  display: none;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius);
+  width: 100%;
+  height: calc(100vh - 86px);
+}
+#app main section.show {
+  display: flex;
+}
+#app main section header {
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+}
+#app main section header h2 {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+#app main section footer {
+  height: 100px;
+  padding: calc(var(--space) * 2);
+  justify-content: center;
+  align-items: center;
+}
+#app main section footer a {
+  background-color: var(--btn-green);
+  width: 100%;
+  border-radius: var(--radius);
+  padding: var(--space);
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+#app main section footer a img {
+  margin-right: var(--space);
+}
+#app main section div.contents {
+  flex-direction: column;
+  overflow-y: scroll;
+}
+#app main section div.contents details {
+  background-color: var(--white);
+  padding: calc(var(--space) * 2);
+  margin: var(--space);
+  border-radius: var(--radius);
+}
+#app main section div.contents details p, #app main section div.contents details span {
+  font-size: 25px;
+}
+#app main section div.contents details p {
+  font-weight: 300;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#app main section div.contents details span {
+  font-weight: 400;
+}
+#app main section div.contents details a {
+  background-color: var(--btn-purple);
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: var(--white);
+  padding: 10px;
+  display: flex;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+}
+#app main section div.contents details a img {
+  margin-right: var(--space);
+}
+#app main section div.contents details summary {
+  outline: none;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+  padding: 0;
+}
+#app main section#new_vault header {
+  background-color: var(--section-header-color);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+#app main section#new_vault form {
+  background-color: var(--white);
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  border-radius: 0 0 var(--radius) var(--radius);
+  overflow-x: scroll;
+}
+#app main section#new_vault form .fields {
+  flex-direction: column;
+}
+#app main section#new_vault form .field {
+  flex-direction: column;
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  transition: all 0.5s;
+  background-color: var(--white);
+}
+#app main section#new_vault form .field label {
+  font-weight: 500;
+}
+#app main section#new_vault form .field input {
+  border: none;
+  padding: 5px 0;
+  outline: none;
+  font-size: 20px;
+}
+#app main section#new_vault form .field.loading {
+  background-color: #eee;
+}
+#app main section#new_vault form .field.loading input {
+  background-color: #eee;
+}
+#app main section#new_vault form div {
+  flex-direction: column;
+  padding: var(--space);
+}
+#app main section#new_vault form div strong, #app main section#new_vault form div small {
+  text-align: center;
+}
+#app main section#new_vault form div strong {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+#app main section#new_vault form footer {
+  background-color: var(--section-header-color);
+  border-radius: 0 0 var(--radius) var(--radius);
+  height: 67px;
+}
+#app main section#new_vault form footer button {
+  height: 62px;
+  background-color: var(--btn-green);
+  width: 100%;
+  border-radius: var(--radius);
+  padding: var(--space);
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+}
+#app main section#new_vault form footer button span {
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  margin-left: var(--space);
+}
+#app main section#new_vault form footer a {
+  width: 170px;
+  margin-right: 40px;
+  font-size: 20px;
+  background-color: var(--btn-cancel);
+}
+
+@media (min-width: 768px) {
+  #app {
+    background-color: #EBEAF1;
+    overflow: hidden;
+  }
+  #app header {
+    height: 100px;
+    flex-direction: row-reverse;
+  }
+  #app header button {
+    display: none;
+  }
+  #app header nav {
+    width: 100%;
+    flex-direction: row-reverse;
+    margin-right: 10px;
+    background-color: transparent;
+    position: relative;
+    top: -10px;
+    transform: none;
+    height: inherit;
+    padding: 0;
+  }
+  #app header nav div.profile {
+    flex-direction: row-reverse;
+  }
+  #app header nav div.profile img {
+    height: 74px;
+    width: 74px;
+  }
+  #app header nav div.profile strong {
+    margin-bottom: 40px;
+  }
+  #app header nav div.links {
+    flex-direction: row-reverse;
+  }
+  #app header nav div.links ul {
+    flex-direction: row;
+    position: relative;
+    bottom: -20px;
+    left: 261px;
+  }
+  #app header nav div.links ul li {
+    margin: 0 calc(var(--space) * 5);
+  }
+  #app header nav div.links ul li a {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  #app header nav div.links ul li + li {
+    margin: 0;
+  }
+  #app header div.logo {
+    align-items: center;
+    width: 100%;
+    justify-content: end;
+    margin-left: 10px;
+  }
+  #app header div.logo img {
+    height: 74px;
+    width: 74px;
+  }
+  #app header div.logo h1 {
+    display: flex;
+  }
+  #app main section {
+    background-color: transparent;
+  }
+  #app main section#vaults {
+    justify-content: space-between;
+  }
+  #app main section#vaults div.contents {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  #app main section#vaults footer {
+    position: relative;
+    bottom: 10px;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 20px 9px;
+  }
+  #app main section#vaults footer a {
+    width: initial;
+  }
+  #app main section#new_vault header {
+    background-color: var(--section-header-color);
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  #app main section#new_vault form {
+    background-color: transparent;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    border-radius: 0 0 var(--radius) var(--radius);
+    overflow-x: scroll;
+  }
+  #app main section#new_vault form .fields {
+    flex-direction: column;
+  }
+  #app main section#new_vault form .field {
+    flex-direction: column;
+    border: var(--border);
+    border-radius: var(--radius);
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    transition: all 0.5s;
+    background-color: var(--white);
+  }
+  #app main section#new_vault form .field label {
+    font-weight: 500;
+  }
+  #app main section#new_vault form .field input {
+    border: none;
+    padding: 5px 0;
+    outline: none;
+    font-size: 20px;
+  }
+  #app main section#new_vault form .field.loading {
+    background-color: #eee;
+  }
+  #app main section#new_vault form .field.loading input {
+    background-color: #eee;
+  }
+  #app main section#new_vault form div {
+    flex-direction: column;
+    padding: var(--space);
+  }
+  #app main section#new_vault form div strong, #app main section#new_vault form div small {
+    text-align: center;
+  }
+  #app main section#new_vault form div strong {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  #app main section#new_vault form div .fields {
+    flex-direction: row;
+  }
+  #app main section#new_vault form div .fields .field + .field {
+    margin-left: var(--space);
+  }
+  #app main section#new_vault form footer {
+    background-color: var(--section-header-color);
+    border-radius: 0 0 var(--radius) var(--radius);
+    height: 67px;
+    margin-bottom: 30px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  #app main section#new_vault form footer button {
+    background-color: var(--btn-green);
+    width: 300px;
+    border-radius: var(--radius);
+    border: none;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
   }
 }
 
