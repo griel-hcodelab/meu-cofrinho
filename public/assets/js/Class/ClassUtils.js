@@ -55,6 +55,27 @@ class Utils
         alertBox.innerHTML = '';
     }
 
+    getRandom()
+    {
+        return Math.floor(Math.random() * 50000) + 1000;
+    }
+
+    appendToTemplate(element, tagName, html, attr = null) {
+        const wrapElement = document.createElement(tagName)
+    
+        if (attr) {
+            for(let item in attr) {
+                wrapElement.setAttribute(item, attr[item])
+            }
+        }
+      
+        wrapElement.innerHTML = html
+      
+        element.append(wrapElement)
+      
+        return wrapElement
+    }
+
 }
 
 export default Utils;

@@ -10,3 +10,11 @@ if (headerMenu) {
         menu.menuHandler(menuContent)
     });
 }
+
+const linkLogo = document.querySelector("#app header .logo");
+if (linkLogo) {
+    linkLogo.addEventListener("click", ()=>{
+        window.location.hash = "#";
+    })
+    
+}
