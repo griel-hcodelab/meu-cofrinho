@@ -10,6 +10,7 @@ class Login
         this.auth = firebase.auth();
 
         this.authStatus = Boolean();
+
     }
 
     checkAuth()
@@ -17,11 +18,14 @@ class Login
 
         this.auth.onAuthStateChanged((user)=>{
             if (user) {
-                window.location.href = 'index.html'
+                var userId = user.uid;
+                //window.location.href = 'index.html'
                 
             } else {
+                if (!window.location.pathname == "/login.html") {
+                    window.location.href = 'login.html';
+                }
                 return this.authStatus = false
-                
             }
         })
     }
@@ -30,7 +34,7 @@ class Login
     {
         this.auth.signInWithEmailAndPassword(values.access_email, values.access_password)
         .then(response => {
-            //window.location.href = 'index.html';
+            window.location.href = 'index.html';
         })
         .catch(error => {
             this.utils.showAlert("access", "error", this.utils.errorHandler(error.code));
