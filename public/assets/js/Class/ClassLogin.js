@@ -11,6 +11,10 @@ class Login
 
         this.authStatus = Boolean();
 
+        this.userid;
+
+        this.changeSection();
+
     }
 
     checkAuth()
@@ -18,11 +22,12 @@ class Login
 
         this.auth.onAuthStateChanged((user)=>{
             if (user) {
-                var userId = user.uid;
-                //window.location.href = 'index.html'
+                this.userid = user.uid;
+                console.log('logado', this.userid)
                 
             } else {
-                if (!window.location.pathname == "/login.html") {
+                console.log('não logado')
+                if (window.location.pathname != "/login.html") {
                     window.location.href = 'login.html';
                 }
                 return this.authStatus = false
