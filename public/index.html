@@ -25,22 +25,27 @@
   <link rel="stylesheet" href="assets/css/stylesheet.css" />
   <title>Meu Cofrinho</title>
 </head>
-<body>
+<body id="app">
 	<header>
 		<button type="button">
 			<img src="assets/svg/menubtn.svg" alt="Menu de Opções" />
 		</button>
 		<nav>
-			 <img src="assets/img/blank-profile.png" alt="Usuário da Silva" />
-			 <strong>usuário da silva</strong>
-			 <ul>
-				 <li>
-					 <a href="perfil.html">editar perfil</a>
-				 </li>
-				 <li>
-					 <a href="sair.html">sair</a>
-				 </li>
-			 </ul>
+			<div class="profile">
+				<img src="assets/img/blank-profile.png" alt="Usuário da Silva" />
+				<strong>usuário da silva</strong>
+			</div>
+			<div class="links">
+				<ul>
+					<li>
+						<a href="perfil.html">editar perfil</a>
+					</li>
+					<li>
+						<a href="sair.html">sair</a>
+					</li>
+				</ul>
+			</div>
+			 
 		</nav>
 		<div class="logo">
 			<img src="assets/svg/vault.svg" alt="Porquinho" />
@@ -52,19 +57,84 @@
 			<header>
 				<h2>meus cofrinhos</h2>
 			</header>
-			<details>
-				<summary>aluguel</summary>
-				<p>Necessário: <strong>R$600,00</strong></p>
-				<p>Você tem: <strong>R$400,00</strong></p>
-				<a href="#edit1">
-					<img src="assets/svg/edit.svg" alt="Editar aluguel" />
-					<span>editar seu cofrinho</span>
-				</a>
-			</details>
+			<div class="contents">
+				<details>
+					<summary>aluguel</summary>
+					<p>Necessário: <strong>R$600,00</strong></p>
+					<p>Você tem: <strong>R$400,00</strong></p>
+					<a href="#edit_vault">
+						<img src="assets/svg/edit.svg" alt="Editar aluguel" />
+						editar seu cofrinho
+					</a>
+				</details>
+				<details>
+					<summary>aluguel</summary>
+					<p>Necessário: <strong>R$600,00</strong></p>
+					<p>Você tem: <strong>R$400,00</strong></p>
+					<a href="#edit_vault">
+						<img src="assets/svg/edit.svg" alt="Editar aluguel" />
+						editar seu cofrinho
+					</a>
+				</details>
+				<details>
+					<summary>aluguel</summary>
+					<p>Necessário: <strong>R$600,00</strong></p>
+					<p>Você tem: <strong>R$400,00</strong></p>
+					<a href="#edit_vault">
+						<img src="assets/svg/edit.svg" alt="Editar aluguel" />
+						editar seu cofrinho
+					</a>
+				</details>
+				<details>
+					<summary>aluguel</summary>
+					<p>Necessário: <strong>R$600,00</strong></p>
+					<p>Você tem: <strong>R$400,00</strong></p>
+					<a href="#edit_vault">
+						<img src="assets/svg/edit.svg" alt="Editar aluguel" />
+						editar seu cofrinho
+					</a>
+				</details>
+				<details>
+					<summary>aluguel</summary>
+					<p>Necessário: <strong>R$600,00</strong></p>
+					<p>Você tem: <strong>R$400,00</strong></p>
+					<a href="#edit_vault">
+						<img src="assets/svg/edit.svg" alt="Editar aluguel" />
+						editar seu cofrinho
+					</a>
+				</details>
+				<details>
+					<summary>aluguel</summary>
+					<p>Necessário: <strong>R$600,00</strong></p>
+					<p>Você tem: <strong>R$400,00</strong></p>
+					<a href="#edit_vault">
+						<img src="assets/svg/edit.svg" alt="Editar aluguel" />
+						editar seu cofrinho
+					</a>
+				</details>
+				<details>
+					<summary>aluguel</summary>
+					<p>Necessário: <strong>R$600,00</strong></p>
+					<p>Você tem: <strong>R$400,00</strong></p>
+					<a href="#edit_vault">
+						<img src="assets/svg/edit.svg" alt="Editar aluguel" />
+						editar seu cofrinho
+					</a>
+				</details>
+				<details>
+					<summary>aluguel</summary>
+					<p>Necessário: <strong>R$600,00</strong></p>
+					<p>Você tem: <strong>R$400,00</strong></p>
+					<a href="#edit_vault">
+						<img src="assets/svg/edit.svg" alt="Editar aluguel" />
+						editar seu cofrinho
+					</a>
+				</details>
+			</div>
 			<footer>
 				<a href="#new">
 					<img src="assets/svg/add.svg" alt="Novo Cofrinho" />
-					<h3>novo cofrinho</h3>
+					novo cofrinho
 				</a>
 			</footer>
 		</section>
@@ -99,6 +169,10 @@
 					</div>
 				</div>
 				<footer>
+					<a href="#">
+						<img src="assets/svg/back.svg" alt="Cancelar" />
+						<span>cancelar</span>
+					</a>
 					<button type="submit">
 						<img src="assets/svg/save.svg" alt="Salvar Cofrinho" />
 						<span>salvar cofrinho</span>
@@ -108,48 +182,99 @@
 		</section>
 
 
-		<section id="edit1">
+		<section id="edit_vault" data-id="1">
 			<header>
 				<h2>aluguel</h2>
 			</header>
 
-			 <div>
-				 <h3>Dinheiro guardado para pagar o aluguel do mês</h3>
-				 <div class="values">
-					 <div class="value">
-						 <p>Valor:</p>
-						 <strong>R$600,00</strong>
-					 </div>
-					 <div class="value">
-						<p>Guardado: <span>R$400,00</span></p>
+			<div>
+				<h3>Dinheiro guardado para pagar o aluguel do mês</h3>
+				<div class="values">
+					<div class="value">
+						<p>Valor:</p>
+						<strong>R$600,00</strong>
 					</div>
-				 </div>
-				 <hr />
-				 <div class="history">
-					 <div>
+					<div class="value">
+					<p>Guardado: </p><strong>R$400,00</strong>
+				</div>
+				</div>
+				<hr />
+				<div id="history">
+					<div class="history">
+						<div>
 						<p>Data: <span>06/04/2021</span></p>
 						<p>Valor: <span>R$100,00</span></p>
 						<p>Onde: <span>Banco Itaú</span></p>
-					 </div>
-					 <div>
-						 <button type="button">
-							 <img src="assets/svg/delete.svg" alt="Apagar reserva" />
-						 </button>
-					 </div>
-				 </div>
-				 <div class="history">
+						</div>
+						<div>
+							<button type="button">
+								<img src="assets/svg/delete.svg" alt="Apagar reserva" />
+							</button>
+						</div>
+					</div>
+					<div class="history">
+						<div>
+						<p>Data: <span>06/04/2021</span></p>
+						<p>Valor: <span>R$100,00</span></p>
+						<p>Onde: <span>Banco Itaú</span></p>
+						</div>
+						<div>
+							<button type="button">
+								<img src="assets/svg/delete.svg" alt="Apagar reserva" />
+							</button>
+						</div>
+					</div>
+					<div class="history">
+						<div>
+						<p>Data: <span>06/04/2021</span></p>
+						<p>Valor: <span>R$100,00</span></p>
+						<p>Onde: <span>Banco Itaú</span></p>
+						</div>
+						<div>
+							<button type="button">
+								<img src="assets/svg/delete.svg" alt="Apagar reserva" />
+							</button>
+						</div>
+					</div>
+					<div class="history">
+						<div>
+						<p>Data: <span>06/04/2021</span></p>
+						<p>Valor: <span>R$100,00</span></p>
+						<p>Onde: <span>Banco Itaú</span></p>
+						</div>
+						<div>
+							<button type="button">
+								<img src="assets/svg/delete.svg" alt="Apagar reserva" />
+							</button>
+						</div>
+					</div>
+					<div class="history">
+						<div>
+						<p>Data: <span>06/04/2021</span></p>
+						<p>Valor: <span>R$100,00</span></p>
+						<p>Onde: <span>Banco Itaú</span></p>
+						</div>
+						<div>
+							<button type="button">
+								<img src="assets/svg/delete.svg" alt="Apagar reserva" />
+							</button>
+						</div>
+					</div>
+					<div class="history">
 					<div>
-					   <p>Data: <span>05/04/2021</span></p>
-					   <p>Valor: <span>R$400,00</span></p>
-					   <p>Onde: <span>Gaveta</span></p>
+						<p>Data: <span>05/04/2021</span></p>
+						<p>Valor: <span>R$400,00</span></p>
+						<p>Onde: <span>Gaveta</span></p>
 					</div>
 					<div>
 						<button type="button">
 							<img src="assets/svg/delete.svg" alt="Apagar reserva" />
-						</button>
+						</button>''
 					</div>
 				</div>
-			 </div>
+				
+			</div>
+			</div>
 
 			<footer>
 				<div class="buttons">
@@ -176,10 +301,10 @@
 							</div>
 						</div>
 						<div class="buttons">
-							<a href="#">
+							<button type="button">
 								<img src="assets/svg/down.svg" alt="Cancelar" />
 								<span>cancelar</span>
-							</a>
+							</button>
 							<button type="submit">
 								<img src="assets/svg/save.svg" alt="Salvar" />
 								salvar
@@ -191,6 +316,6 @@
 			</footer>
 		</section>
 	</main>
-	<script src="javascript.js" defer></script>
+	<script src="javascript.js"></script>
 </body>
 </html>
