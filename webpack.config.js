@@ -1,4 +1,5 @@
 const path = require("path")
+const CompressionWebpackPlugin = require("compression-webpack-plugin")
 
 module.exports = {
     mode: 'development',
@@ -7,5 +8,8 @@ module.exports = {
         filename: 'javascript.js',
         path: path.resolve(__dirname, 'public')
     },
-    devtool: false
+    devtool: false,
+    plugins: [
+        new CompressionWebpackPlugin(),
+    ]
 }

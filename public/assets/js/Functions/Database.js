@@ -11,25 +11,6 @@ export function authenticate()
     auth.onAuthStateChanged((user)=>{
         if (user) {
             userData = user;
-            const vaults = [];
-            const vaultValues = [];
-    
-            //Consultando os cofres
-            db.collection(`vaults/${userData.uid}/vault`).onSnapshot(snapshot => {
-                snapshot.forEach(item => {
-                  vaults.push(item.data());
-    
-                    //Consultando os valores de cada cofre
-                    db.collection(`vaults/${userData.uid}/vault/${item.data().vault_id}/values`).onSnapshot(snapshot => {
-                        snapshot.forEach(item => {
-                            vaultValues.push(item.data());
-                            if (vaults.length >= 1) {
-                                renderVaults(vaults, vaultValues)
-                            }
-                        })
-                    });
-                })
-            });
         }
     })
 }
@@ -124,9 +105,16 @@ export function select(vaultId)
 export function deleteHistory(vaultId, id)
 {
 
+    console.log(vaultId, id)
+
+
+
     db.collection(`vaults/${userData.uid}/vault`).doc(vaultId).collection("values").doc(id).delete()
     .then(() => {
-        
+
+        document.querySelector(`.id-${id}`).remove()
+        select(vaultId);
+
     }).catch((error) => {
         
     });

@@ -53,16 +53,11 @@ export function renderVaults(vault, vaultValues)
 export function renderVault(data, values)
 {
 
-
-    
-
-
     const section = document.querySelector("section#edit_vault");
     section.innerHTML = '';
 
     let sum = [];
     values.forEach(item=>{
-        console.log(item.value)
         sum.push(parseFloat(item.value))
     });
     const vaulted = sum.reduce((item, total)=>{
@@ -106,7 +101,7 @@ export function renderVault(data, values)
                     <img src="assets/svg/delete.svg" alt="Apagar reserva" />
                 </button>
             </div>
-            `, {"class":"history"})
+            `, {"class":`history id-${item.id}`})
         }
 
     });
