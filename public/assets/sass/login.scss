@@ -2,15 +2,16 @@ main {
     &#login {
         background-color: var(--bg-color);
         height: 100vh;
-        width: 100%;
+        width: 100vw;
         div {
             &.overflow {
-                padding: 20px;
-                align-items: center;
-                width: 100%;
+                margin-left: 20px;
                 flex-direction: row;
                 overflow: hidden;
-                justify-content: center;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                padding-right: 20px;
                 section {
                     flex-direction: column;
                     background-color: var(--white);
@@ -20,12 +21,13 @@ main {
                     width: 90%;
                     transition: 1s;
                     box-shadow: 10px 10px 10px rgb(0 0 0 / 50%);
+                    align-self: center;
                     &.signup {
                         position: absolute;
                         left: -1000px;
                         z-index: 0;
                         &.show {
-                            left: 25px;
+                            left: 0;
                             z-index: 2;
                         }
                     }
@@ -34,7 +36,7 @@ main {
                         left: -1000px;
                         z-index: 1;
                         &.show {
-                            left: 25px;
+                            left: 0;
                             z-index: 2;
                         }
                     }
@@ -43,7 +45,7 @@ main {
                         right: 1000px;
                         z-index: 0;
                         &.show {
-                            right: 25px;
+                            right: 0;
                             z-index: 2;
                         }
                     }
@@ -55,6 +57,7 @@ main {
                     form {
                         flex-direction: column;
                         margin-top: 20px;
+                        width: 100%;
                         @include field;
                         a {
                             text-align: right;
@@ -65,6 +68,20 @@ main {
                         }
                         @include wrap;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        &#login {
+            justify-content: center;
+            align-items: center;
+            div {
+                &.overflow {
+                    max-width: 768px;
                 }
             }
         }

@@ -1,8 +1,6 @@
 @mixin field {
     .fields {
-        .field + .field {
-            margin-left: 10px;
-        }
+        flex-direction: column;
     }
     .field {
         flex-direction: column;
@@ -11,6 +9,8 @@
         padding: 10px;
         margin: 10px 0;
         width: 100%;
+        transition: all 0.5s;
+        background-color: var(--white);
         label {
             font-weight: 500;
         }
@@ -18,6 +18,13 @@
             border: none;
             padding: 5px 0;
             outline: none;
+            font-size: 20px;
+        }
+        &.loading {
+            background-color: #eee;
+            input {
+                background-color: #eee;
+            }
         }
     }
 }
@@ -41,6 +48,16 @@
             padding: 3px;
             outline: none;
             cursor: pointer;
+            &:disabled {
+                opacity: 0.8;
+                cursor: not-allowed;
+                &:hover {
+                    background-color: var(--btn-green);
+                }
+                &:active {
+                    background-color: var(--btn-green);
+                }
+            }
             &:hover {
                 background-color: #6eaf99;
             }
@@ -61,11 +78,11 @@
         .wrap {
             button {
                 border-radius: var(--radius);
-                width: 100%;
-                flex-direction: row;
-                justify-content: space-between;
+                width: 210px;
+                flex-direction: row;  
+                justify-content: space-evenly;
                 align-items: center;
-                padding: 10px;
+                padding: 0 10px;
                 span {
                     display: flex;
                     color: var(--white);

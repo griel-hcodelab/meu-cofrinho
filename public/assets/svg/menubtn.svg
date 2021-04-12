@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="menubtn" transform="translate(-6 -7)">
+    <g id="XMLID_240_" transform="translate(15.348 16.348)">
+      <path id="XMLID_241_" d="M3.13,6.261H28.173a3.13,3.13,0,1,0,0-6.261H3.13a3.13,3.13,0,0,0,0,6.261Z" fill="#fff"/>
+      <path id="XMLID_242_" d="M28.173,60H3.13a3.13,3.13,0,0,0,0,6.261H28.173a3.13,3.13,0,1,0,0-6.261Z" transform="translate(0 -47.479)" fill="#fff"/>
+      <path id="XMLID_243_" d="M28.173,120H3.13a3.13,3.13,0,0,0,0,6.261H28.173a3.13,3.13,0,1,0,0-6.261Z" transform="translate(0 -94.957)" fill="#fff"/>
+    </g>
+    <g id="Retângulo_32" data-name="Retângulo 32" transform="translate(6 7)" fill="none" stroke="#fff" stroke-width="2">
+      <rect width="50" height="50" rx="10" stroke="none"/>
+      <rect x="1" y="1" width="48" height="48" rx="9" fill="none"/>
+    </g>
+  </g>
+</svg>
