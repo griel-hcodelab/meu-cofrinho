@@ -61,14 +61,12 @@ class Login
         this.auth.sendPasswordResetEmail(value.forget_email)
         .then(() => {
             sessionStorage.setItem("success", "As instruções para alterar sua senha foram enviados ao seu e-mail");
-            //window.location.href = 'login.html'
             window.location.hash = "#";
             this.utils.showAlert("access", "success", sessionStorage.getItem("success"));
             sessionStorage.removeItem("success");
         })
         .catch((error) => {
             sessionStorage.setItem("error", this.utils.errorHandler(error.code));
-            //window.location.href = 'login.html'
             window.location.hash = "#";
             this.utils.showAlert("access", "error", sessionStorage.getItem("error"));
             sessionStorage.removeItem("error");

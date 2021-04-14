@@ -33,9 +33,7 @@ class ClassFirebase
             "vault_value":data.vault_value,
             "vault_description":data.vault_description,
         })
-        .then(()=>{
-            
-        })
+        
         
         const vaultValuesCode = this.utils.getRandom();
 
@@ -48,6 +46,10 @@ class ClassFirebase
             "where":data.vault_add_local
     
         })
+        .then(()=>{
+            window.location.hash = "#home";
+            this.utils.clearAllInputs();
+        })
 
         /**
          * vault_identify: "fdsfds", vault_value: "3232", vault_description: "fdsfsdfds"
@@ -59,7 +61,7 @@ class ClassFirebase
         let vault;
         let vaultValues = [];
 
-        
+        const dom = new ClassDOM();
 
         this.db.collection(`vaults/${uid}/vault`).doc(vaultId).get()
         .then((doc)=>{
@@ -71,12 +73,15 @@ class ClassFirebase
                 querySnapshot.forEach(doc => {
                     vaultValues.push(doc.data());
                     
+                    dom.renderVault(vault, vaultValues);
                 });
             });
 
-            const dom = new ClassDOM();
             
-            dom.renderVault(vault, vaultValues);
+
+            
+            
+            
         })
 
 
