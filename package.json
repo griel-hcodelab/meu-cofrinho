@@ -12,6 +12,7 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "compression-webpack-plugin": "^7.1.2",
     "firebase-tools": "^9.1.0",
     "sass": "^1.32.8",
     "webpack": "^5.28.0",

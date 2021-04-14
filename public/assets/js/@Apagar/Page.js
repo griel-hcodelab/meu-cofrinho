@@ -19,29 +19,35 @@ window.addEventListener("hashchange", ()=>{
 
 
 document.querySelectorAll("main").forEach((page)=>{
-    
-    const newVault = page.querySelector("section#new_vault form")
-    if (newVault) {
-        newVault.addEventListener("submit", (e)=>{
-            e.preventDefault();
 
-            const values = getFormValues(newVault);
-            const vaultId = getRandom();
-            insert(vaultId, values)
+    let userData;
 
-        })
-    }
-
-    /*auth.onAuthStateChanged((user)=>{
+    auth.onAuthStateChanged((user)=>{
         if (user) {
+            userData = user;
+
+            const newVault = page.querySelector("section#new_vault form")
+            if (newVault) {
+                newVault.addEventListener("submit", (e)=>{
+                    e.preventDefault();
+
+                    const values = getFormValues(newVault);
+                    const vaultId = getRandom();
+                    insert(vaultId, values)
+
+                })
+            }
+
             const vaults = [];
             const vaultValues = [];
-            db.collection(`vaults/${user.uid}/vault`).onSnapshot(snapshot => {
+
+            //Consultando os cofres
+            db.collection(`vaults/${userData.uid}/vault`).onSnapshot(snapshot => {
                 snapshot.forEach(item => {
-                  vaults.push(item.data());
-        
+                    vaults.push(item.data());
+
                     //Consultando os valores de cada cofre
-                    db.collection(`vaults/${user.uid}/vault/${item.data().vault_id}/values`).onSnapshot(snapshot => {
+                    db.collection(`vaults/${userData.uid}/vault/${item.data().vault_id}/values`).onSnapshot(snapshot => {
                         snapshot.forEach(item => {
                             vaultValues.push(item.data());
                             if (vaults.length >= 1) {
@@ -52,7 +58,11 @@ document.querySelectorAll("main").forEach((page)=>{
                 })
             });
         }
-    })*/
+    });
+
+    
+    
+    
 
     
     
