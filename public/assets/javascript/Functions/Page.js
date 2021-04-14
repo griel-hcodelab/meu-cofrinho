@@ -23,14 +23,18 @@ document.querySelectorAll("#app").forEach((page)=>{
         window.location.hash = "#home";
     })
 
+    const signout = page.querySelector("header nav .links a#signout");
+    if (signout) {
+        signout.addEventListener("click", (e)=>{
+            e.preventDefault();
+            login.signout();
+        })
+    }
+
     login.getLoginData().onAuthStateChanged((user)=>{
         if (user) {
             const profileUserName = page.querySelector("header nav div.profile strong");
             profileUserName.innerHTML = user.displayName;
-
-            const dom = new ClassDOM(user.uid);
-
-
 
             //Consultando os cofres
             db.data().collection(`vaults/${user.uid}/vault`).onSnapshot(snapshot => {
@@ -39,8 +43,16 @@ document.querySelectorAll("#app").forEach((page)=>{
                     vaults.push(item.data());
                     
                 })
-                dom.renderVaults(vaults)
+                if (vaults.length >= 1) {
+                    const dom = new ClassDOM(user.uid, vaults);
+                    dom.renderVaults()
+
+
+                }
+
             });
+
+
 
             
             
@@ -54,6 +66,7 @@ document.querySelectorAll("#app").forEach((page)=>{
                     const values = utils.getFormValues(e.target)
 
                     db.insert(values, user.uid)
+                    window.location.hash = "#home";
                 })
 
 
@@ -61,6 +74,8 @@ document.querySelectorAll("#app").forEach((page)=>{
 
 
 
+        } else {
+            window.location.href = "/login.html";
         }
         
     })

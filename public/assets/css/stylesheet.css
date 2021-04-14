@@ -89,6 +89,48 @@ button:active {
   opacity: 0.7;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3c2e80;
+  border: 11px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+
+::-webkit-scrollbar-track {
+  background: #612f74;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #40204c;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #27142e;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 .input-error {
   border: 1px solid red !important;
 }
@@ -143,36 +185,49 @@ main#login div.overflow section {
   border-radius: var(--radius);
   padding: 20px;
   width: 90%;
-  transition: 1s;
+  transition: 0.7s;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   align-self: center;
+  /*&.signup {
+      position: absolute;
+      left: -1000px;
+      z-index: 0;
+      opacity: 0;
+      &.show {
+          left: 0;
+          z-index: 2;
+          opacity: 1;
+      }
+  }
+  &.access {
+      position: absolute;
+      left: -1000px;
+      z-index: 1;
+      &.show {
+          left: 0;
+          z-index: 2;
+      }
+  }
+  &.forget {
+      position: absolute;
+      right: 1000px;
+      z-index: 0;
+      &.show {
+          right: 0;
+          z-index: 2;
+      }
+  }*/
 }
-main#login div.overflow section.signup {
+main#login div.overflow section.signup, main#login div.overflow section.access, main#login div.overflow section.forget {
   position: absolute;
-  left: -1000px;
+  transform: scale(0.5);
   z-index: 0;
+  opacity: 0;
 }
-main#login div.overflow section.signup.show {
-  left: 0;
+main#login div.overflow section.signup.show, main#login div.overflow section.access.show, main#login div.overflow section.forget.show {
+  transform: scale(1);
   z-index: 2;
-}
-main#login div.overflow section.access {
-  position: absolute;
-  left: -1000px;
-  z-index: 1;
-}
-main#login div.overflow section.access.show {
-  left: 0;
-  z-index: 2;
-}
-main#login div.overflow section.forget {
-  position: absolute;
-  right: 1000px;
-  z-index: 0;
-}
-main#login div.overflow section.forget.show {
-  right: 0;
-  z-index: 2;
+  opacity: 1;
 }
 main#login div.overflow section h2 {
   color: var(--text-color);
@@ -565,10 +620,22 @@ main#login div.overflow section form .wrap button span {
   font-size: 20px;
   background-color: var(--btn-cancel);
 }
+#app main section#edit_vault header button {
+  display: flex;
+}
 #app main section#edit_vault div {
   background-color: var(--white);
   flex-direction: column;
   padding: var(--space);
+}
+#app main section#edit_vault div.novault {
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+#app main section#edit_vault div.novault p a {
+  display: inline;
 }
 #app main section#edit_vault div h3 {
   font-size: 30px;
@@ -660,6 +727,10 @@ main#login div.overflow section form .wrap button span {
 }
 #app main section#edit_vault footer div.buttons button img {
   margin-right: var(--space);
+}
+#app main section#edit_vault footer div.buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 #app main section#edit_vault footer div.add_values {
   display: none;
@@ -836,6 +907,8 @@ main#login div.overflow section form .wrap button span {
   #app main section#new_vault header {
     background-color: var(--section-header-color);
     border-radius: var(--radius) var(--radius) 0 0;
+    height: 0;
+    margin-top: 15px;
   }
   #app main section#new_vault form {
     background-color: transparent;

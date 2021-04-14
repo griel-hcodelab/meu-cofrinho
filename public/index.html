@@ -53,7 +53,7 @@
 				<div class="links">
 					<ul>
 						<li>
-							<a href="perfil.html">editar perfil</a>
+							<a href="#profile">editar perfil</a>
 						</li>
 						<li>
 							<a href="#" id="signout">sair</a>
@@ -101,10 +101,13 @@
 							<input type="number" name="vault_value" id="vault_value" placeholder="Digite o valor" required />
 						</div>
 					</div>
-					<div class="field">
-						<label for="vault_description">Gostaria de adicionar uma descrição?</label>
-						<input type="text" name="vault_description" id="vault_description" placeholder="Digite a descrição deste cofre"  />
+					<div class="fields">
+						<div class="field">
+							<label for="vault_description">Gostaria de adicionar uma descrição?</label>
+							<input type="text" name="vault_description" id="vault_description" placeholder="Digite a descrição deste cofre"  />
+						</div>
 					</div>
+
 					<strong>adicionar uma quantia</strong>
 					<small>você pode adicionar depois</small>
 					<div class="fields">
@@ -133,138 +136,34 @@
 
 
 		<section id="edit_vault">
-			<h2>Ops... Você está tentando editar algo que não existe!</h2>
-			<!--<header>
-				<h2>aluguel</h2>
-			</header>
+			<div class="novault">
+				<h2>Ops... Você está tentando editar algo que não existe!</h2>
+				<p>Porque você não experimenta <a href="#">voltar</a> para ver seus cofrinhos ou criar um novo?</p>
+			</div>
+		</section>
 
+		<section id="profile">
+			<header>
+				<h2>seu perfil</h2>
+			</header>
 			<div class="contents">
-				<h3>Dinheiro guardado para pagar o aluguel do mês</h3>
-				<div class="values">
-					<div class="value">
-						<p>Valor:</p>
-						<strong>R$600,00</strong>
-					</div>
-					<div class="value">
-						<p>Guardado: </p><strong>R$400,00</strong>
-					</div>
-				</div>
-				<hr />
-				<div id="history">
-					<div class="history">
-						<div>
-						<p>Data: <span>06/04/2021</span></p>
-						<p>Valor: <span>R$100,00</span></p>
-						<p>Onde: <span>Banco Itaú</span></p>
-						</div>
-						<div>
-							<button type="button">
-								<img src="assets/svg/delete.svg" alt="Apagar reserva" />
-							</button>
-						</div>
-					</div>
-					<div class="history">
-						<div>
-						<p>Data: <span>06/04/2021</span></p>
-						<p>Valor: <span>R$100,00</span></p>
-						<p>Onde: <span>Banco Itaú</span></p>
-						</div>
-						<div>
-							<button type="button">
-								<img src="assets/svg/delete.svg" alt="Apagar reserva" />
-							</button>
-						</div>
-					</div>
-					<div class="history">
-						<div>
-						<p>Data: <span>06/04/2021</span></p>
-						<p>Valor: <span>R$100,00</span></p>
-						<p>Onde: <span>Banco Itaú</span></p>
-						</div>
-						<div>
-							<button type="button">
-								<img src="assets/svg/delete.svg" alt="Apagar reserva" />
-							</button>
-						</div>
-					</div>
-					<div class="history">
-						<div>
-						<p>Data: <span>06/04/2021</span></p>
-						<p>Valor: <span>R$100,00</span></p>
-						<p>Onde: <span>Banco Itaú</span></p>
-						</div>
-						<div>
-							<button type="button">
-								<img src="assets/svg/delete.svg" alt="Apagar reserva" />
-							</button>
-						</div>
-					</div>
-					<div class="history">
-						<div>
-						<p>Data: <span>06/04/2021</span></p>
-						<p>Valor: <span>R$100,00</span></p>
-						<p>Onde: <span>Banco Itaú</span></p>
-						</div>
-						<div>
-							<button type="button">
-								<img src="assets/svg/delete.svg" alt="Apagar reserva" />
-							</button>
-						</div>
-					</div>
-					<div class="history">
-						<div>
-							<p>Data: <span>05/04/2021</span></p>
-							<p>Valor: <span>R$400,00</span></p>
-							<p>Onde: <span>Gaveta</span></p>
-						</div>
-						<div>
-							<button type="button">
-								<img src="assets/svg/delete.svg" alt="Apagar reserva" />
-							</button>''
-						</div>
-					</div>
+				
+				<div class="photo">
 					
 				</div>
-			</div>
-
-			<footer>
-				<div class="buttons">
-					<a href="#">
-						<img src="assets/svg/back.svg" alt="Voltar" />
-						<span>voltar</span>
-					</a>
-					<button type="button">
-						<img src="assets/svg/add_value.svg" alt="Adicionar Valor" />
-						adicionar valor
-					</button>
-				</div>
-				<div class="add_values">
-					<form>
-						<p>adicionar uma quantia</p>
-						<div class="fields">
-							<div class="field">
-								<label for="vault_add_cash">Quanto você vai adicionar?</label>
-								<input type="text" name="vault_add_cash" id="vault_add_cash" placeholder="Digite o valor" />
-							</div>
-							<div class="field">
-								<label for="vault_add_local">Onde está o dinheiro?</label>
-								<input type="text" name="vault_add_local" id="vault_add_local" placeholder="Banco, Carteira, Gaveta" />
-							</div>
-						</div>
-						<div class="buttons">
-							<button type="button">
-								<img src="assets/svg/down.svg" alt="Cancelar" />
-								<span>cancelar</span>
-							</button>
-							<button type="submit">
-								<img src="assets/svg/save.svg" alt="Salvar" />
-								salvar
-							</button>
-						</div>
+				<div class="form">
+					<form id="profile">
+					
 					</form>
 				</div>
-
-			</footer>-->
+				
+			</div>
+			<footer>
+				<button type="submit">
+					<img src="assets/svg/save.svg" alt="Salvar perfil" />
+					<span>salvar perfil</span>
+				</button>
+			</footer>
 		</section>
 	</main>
 	<script src="javascript.js"></script>

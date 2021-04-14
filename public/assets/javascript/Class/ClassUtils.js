@@ -138,6 +138,9 @@ class Utils
                 document.querySelector("#edit_vault").classList.add("show")
                 this.clearAllInputs();
             break;
+            case "#profile":
+                document.querySelector("#profile").classList.add("show")
+            break;
         }
     }
 
@@ -156,6 +159,8 @@ class Utils
             input.value = '';
         })
     }
+
+
 }
 
 export default Utils;

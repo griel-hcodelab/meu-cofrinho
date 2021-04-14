@@ -5,19 +5,19 @@ document.querySelectorAll("main#login").forEach((page)=>{
     const login = new Login();
     const utils = new Utils();
 
-
+    window.addEventListener("load", ()=>{
+        login.changeSection(window.location.hash)
+    });
+    window.addEventListener("hashchange", ()=>{
+        login.changeSection(window.location.hash)
+    });
 
     login.getLoginData().onAuthStateChanged((user)=>{
         if (user) {
             window.location.href = '/index.html';
         } else {
 
-            window.addEventListener("load", ()=>{
-                login.changeSection(window.location.hash)
-            });
-            window.addEventListener("hashchange", ()=>{
-                login.changeSection(window.location.hash)
-            });
+
 
             const signupForm = page.querySelector(".signup form");
             if (signupForm) {
