@@ -96,6 +96,14 @@ class Login
             <span>enviar</span>`
         })
     }
+
+    signout()
+    {
+        this.auth.signOut()
+        .then(() => {
+            window.location.href = '/login.html';
+        })
+    }
 }
 
 export default Login;

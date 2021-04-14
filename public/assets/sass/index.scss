@@ -265,7 +265,23 @@
 				}
 			}
 			&#edit_vault {
+				header {
+					button {
+						display: flex;
+					}
+				}
 				div {
+					&.novault {
+						background-color: transparent;
+						justify-content: center;
+						align-items: center;
+						height: 100%;
+						p {
+							a {
+								display: inline;
+							}
+						}
+					}
 					background-color: var(--white);
 					flex-direction: column;
 					padding: var(--space);
@@ -361,6 +377,10 @@
 								font-weight: 700;
 								color: var(--white);
 								text-transform: uppercase;
+								&:disabled {
+									opacity: 0.5;
+									cursor: not-allowed;
+								}
 							}
 						}
 						&.add_values {
@@ -526,6 +546,8 @@
 					header {
 						background-color: var(--section-header-color);
 						border-radius: var(--radius) var(--radius) 0 0;
+						height: 0;
+						margin-top: 15px;
 					}
 					form {
 						background-color: transparent;

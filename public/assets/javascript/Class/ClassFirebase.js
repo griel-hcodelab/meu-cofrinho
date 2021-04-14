@@ -47,7 +47,6 @@ class ClassFirebase
     
         })
         .then(()=>{
-            window.location.hash = "#home";
             this.utils.clearAllInputs();
         })
 
@@ -77,15 +76,98 @@ class ClassFirebase
                 });
             });
 
-            
-
-            
-            
-            
         })
-
-
     }
+
+    insertValue(id, uid, data = {})
+    {
+        const random = this.utils.getRandom();
+        const vaultValues = this.db.collection(`vaults/${uid}/vault/${id}/values`).doc(random);
+
+        vaultValues.set({
+            "id":random,
+            "date":this.utils.getToday(),
+            "value":data.vault_add_cash,
+            "where":data.vault_add_local
+
+        })
+        .then(() => {
+            this.utils.clearAllInputs();
+
+            const sum = [];
+
+            document.querySelectorAll("#history span.value_history").forEach((item)=>{
+
+                const value = item.innerHTML.replace("R$&nbsp;","").replace(",",".")
+                
+                sum.push(parseFloat(value))
+
+                const result = sum.reduce((item, total)=>{
+                    return eval(item+total);
+                })
+                
+                document.querySelector(".value strong.vaulted").innerHTML = this.utils.formatPrice(result);
+                
+            })
+        })
+        .catch((error) => {
+            console.error('erro', error)
+        });
+    }
+
+    delete(vaultId, uid)
+    {
+        this.db.collection(`vaults/${uid}/vault`).doc(vaultId).delete()
+        .then(() => {
+
+            window.location.hash = "#home";
+
+        }).catch((error) => {
+            console.log(error)
+        });
+    }
+
+    deleteHistory(vaultId, uid, id)
+    {
+        this.db.collection(`vaults/${uid}/vault/${vaultId}/values`).doc(id).delete()
+        .then(() => {
+
+            document.querySelector(`.id-${id}`).remove();
+
+            const sum = [];
+
+            document.querySelectorAll("#history span.value_history").forEach((item)=>{
+
+                console.log(item)
+
+                const value = item.innerHTML.replace("R$&nbsp;","").replace(",",".")
+                
+                sum.push(parseFloat(value))
+
+                let result = 0;
+
+                result = sum.reduce((item, total)=>{
+                    return eval(item+total);
+                }, 0)
+
+                document.querySelector(".value strong.vaulted").innerHTML = this.utils.formatPrice(result);
+                
+            })
+
+            console.log('sum', sum)
+
+            if (sum.length == 0) {
+                document.querySelector(".value strong.vaulted").innerHTML = "R$ 0,00";
+            }
+           
+
+        }).catch((error) => {
+            console.log(error)
+        });
+    }
+
+
+
 }
 
 export default ClassFirebase;
