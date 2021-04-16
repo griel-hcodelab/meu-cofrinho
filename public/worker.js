@@ -7,6 +7,9 @@ const urlsToCache = [
 ]
 
 self.addEventListener('install', function(event){
+    if (e.request.cache === 'only-if-cached' && e.request.mode !== 'same-origin') {
+        return;
+      }
     event.waitUntil(
         caches.open('v1')
         .then(function(cache){
@@ -20,6 +23,9 @@ self.addEventListener('activate', event => {
 })
 
 self.addEventListener('fetch', event => {
+    if (e.request.cache === 'only-if-cached' && e.request.mode !== 'same-origin') {
+        return;
+      }
     event.respondWith(
         caches.match(event.request).then( response => {
             return response || fetch(event.request)
