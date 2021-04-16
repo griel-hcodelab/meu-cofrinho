@@ -179,9 +179,16 @@ class Utils
 
     clearAllInputs()
     {
-        document.querySelectorAll("input").forEach((input)=>{
+        const inputs = [];
+        document.querySelector("#new_vault").querySelectorAll("input").forEach((input)=>{
+            inputs.push(input)
+        });
+        document.querySelector("#edit_vault").querySelectorAll("input").forEach((input)=>{
+            inputs.push(input)
+        });
+        inputs.forEach((input)=>{
             input.value = '';
-        })
+        });
     }
 
 

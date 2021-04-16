@@ -47,7 +47,6 @@ class Profile
             .then((snapshot)=>snapshot.ref.getDownloadURL())
             .then(photoURL => userGlobal.updateProfile({ photoURL })) //se o objeto e valor forem iguais ao da variavel, pode usar só 1x
             .then(()=>{
-                console.log(userGlobal)
                 userGlobal.photoURL;
                 document.querySelector("#header > div.menu.logged > div > div > picture > a > img").src = userGlobal.photoURL;
             });
