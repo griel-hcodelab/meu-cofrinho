@@ -323,9 +323,6 @@ document.querySelectorAll("#app").forEach((page)=>{
 
                     }
 
-                    
-
-
                     db.updateProfile(user.uid, utils.getFormValues(formElement))
 
                     btnSubmit.innerHTML = `<img src="assets/svg/save.svg" alt="Salvar perfil" />
@@ -342,30 +339,9 @@ document.querySelectorAll("#app").forEach((page)=>{
                     utils.setFormValues(formElement, profile)
     
                 });
-
-                
-                
-                
-                
-
             }
-
-
-
         } else {
             window.location.href = "/login.html";
         }
-        
     })
-
-    
-
-    
-
-
-
-    
-
-
-
 })

@@ -45,7 +45,7 @@ class Profile
             fileRef
             .put(blob)
             .then((snapshot)=>snapshot.ref.getDownloadURL())
-            .then(photoURL => userGlobal.updateProfile({ photoURL })) //se o objeto e valor forem iguais ao da variavel, pode usar só 1x
+            .then(photoURL => userGlobal.updateProfile({ photoURL }))
             .then(()=>{
                 userGlobal.photoURL;
                 document.querySelector("#header > div.menu.logged > div > div > picture > a > img").src = userGlobal.photoURL;
@@ -66,7 +66,7 @@ class Profile
           fileRef
           .put(blob)
           .then((snapshot)=>snapshot.ref.getDownloadURL())
-          .then(photoURL => userGlobal.updateProfile({ photoURL })) //se o objeto e valor forem iguais ao da variavel, pode usar só 1x
+          .then(photoURL => userGlobal.updateProfile({ photoURL })) 
           .then(()=>{
               console.log(userGlobal)
               userGlobal.photoURL;
@@ -80,7 +80,7 @@ class Profile
       fileRef
             .put(blob)
             .then((snapshot)=>snapshot.ref.getDownloadURL())
-            .then(photoURL => userGlobal.updateProfile({ photoURL })) //se o objeto e valor forem iguais ao da variavel, pode usar só 1x
+            .then(photoURL => userGlobal.updateProfile({ photoURL })) 
             .then(()=>{
                 console.log(userGlobal)
                 userGlobal.photoURL;
