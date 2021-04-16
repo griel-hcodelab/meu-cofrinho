@@ -5,6 +5,10 @@
     font-family: 'Fonte', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+  overflow: hidden;
+}
+
 //Zero Margin
 body, h1, h2, h3, h4, h5, h6 {
     margin: 0;

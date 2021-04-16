@@ -37,6 +37,15 @@ document.querySelectorAll("#app").forEach((page)=>{
         })
     }
 
+    const navLinks = page.querySelectorAll("header nav .links ul li a");
+    if (navLinks) {
+        navLinks.forEach((a)=>{
+            a.addEventListener("click", ()=>{
+                console.log('link')
+                page.querySelector("header nav").classList.remove('open')
+            })
+        })
+    }
 
 
     login.getLoginData().onAuthStateChanged((user)=>{

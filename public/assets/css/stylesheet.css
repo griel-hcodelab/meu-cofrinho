@@ -1,1 +1,1199 @@
-@font-face{font-family:"Fonte";src:local("Roboto Thin"),url("../fonts/Roboto-Thin.ttf") format("truetype");font-style:normal;font-weight:100;font-display:swap}@font-face{font-family:"Fonte";src:local("Roboto Light"),url("../fonts/Roboto-Light.ttf") format("truetype");font-style:normal;font-weight:300;font-display:swap}@font-face{font-family:"Fonte";src:local("Roboto Regular"),url("../fonts/Roboto-Regular.ttf") format("truetype");font-style:normal;font-weight:400;font-display:swap}@font-face{font-family:"Fonte";src:local("Roboto Medium"),url("../fonts/Roboto-Medium.ttf") format("truetype");font-style:normal;font-weight:500;font-display:swap}@font-face{font-family:"Fonte";src:local("Roboto Bold"),url("../fonts/Roboto-Bold.ttf") format("truetype");font-style:normal;font-weight:700;font-display:swap}@font-face{font-family:"Fonte";src:local("Roboto Black"),url("../fonts/Roboto-Black.ttf") format("truetype");font-style:normal;font-weight:900;font-display:swap}:root{--bg-color: #612F74;--header-color: #3C2E80;--section-header-color: #EFEBF1;--text-color: #333;--white: #FFF;--border: 1px solid #333333;--btn-green: #247350;--btn-purple: #362973;--btn-cancel: #732424;--radius: 10px;--space: 10px}*{box-sizing:border-box;scroll-behavior:smooth;-webkit-font-smoothing:antialiased;font-family:"Fonte","Segoe UI",Tahoma,Geneva,Verdana,sans-serif}body,h1,h2,h3,h4,h5,h6{margin:0}body,main,div,section,header,article,footer,form,button,nav,ul,li,a{display:flex}a{text-decoration:none}a:hover{opacity:.9}a:active{opacity:.7}button{cursor:pointer}button:hover{opacity:.9}button:active{opacity:.7}::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-button{width:0px;height:0px}::-webkit-scrollbar-thumb{background:#3c2e80;border:11px none #fff;border-radius:50px}::-webkit-scrollbar-thumb:hover{background:#fff}::-webkit-scrollbar-thumb:active{background:#000}::-webkit-scrollbar-track{background:#612f74;border:0px none #fff;border-radius:50px}::-webkit-scrollbar-track:hover{background:#40204c}::-webkit-scrollbar-track:active{background:#27142e}::-webkit-scrollbar-corner{background:transparent}.input-error{border:1px solid red !important}.input-focus{box-shadow:0px 0px 5px #612f74}#loading{width:100%;height:100%;position:fixed;z-index:5;background-color:var(--bg-color)}.alert.success{color:#155724;background-color:#d4edda;border-color:#c3e6cb;padding:10px;border-radius:10px;margin:10px 0}.alert.error{color:#721c24;background-color:#f8d7da;border-color:#f5c6cb;padding:10px;border-radius:10px;margin:10px 0}main#login{background-color:var(--bg-color);height:100vh;width:100vw}main#login div.overflow{margin-left:20px;flex-direction:row;overflow:hidden;position:relative;width:100%;height:100%;padding-right:20px}main#login div.overflow section{flex-direction:column;background-color:var(--white);border:var(--border);border-radius:var(--radius);padding:20px;width:90%;transition:.7s;box-shadow:10px 10px 10px rgba(0,0,0,.5);align-self:center}main#login div.overflow section.signup,main#login div.overflow section.access,main#login div.overflow section.forget{position:absolute;transform:scale(0.5);z-index:0;opacity:0}main#login div.overflow section.signup.show,main#login div.overflow section.access.show,main#login div.overflow section.forget.show{transform:scale(1);z-index:2;opacity:1}main#login div.overflow section h2{color:var(--text-color);text-align:center;text-transform:uppercase}main#login div.overflow section form{flex-direction:column;margin-top:20px;width:100%}main#login div.overflow section form .fields{flex-direction:column}main#login div.overflow section form .field{flex-direction:column;border:var(--border);border-radius:var(--radius);padding:10px;margin:10px 0;width:100%;transition:all .5s;background-color:var(--white)}main#login div.overflow section form .field label{font-weight:500}main#login div.overflow section form .field input{border:none;padding:5px 0;outline:none;font-size:20px}main#login div.overflow section form .field.loading{background-color:#eee}main#login div.overflow section form .field.loading input{background-color:#eee}main#login div.overflow section form a{text-align:right}main#login div.overflow section form hr{border:var(--border);width:100%}main#login div.overflow section form .wrap{flex-direction:row;justify-content:space-between;margin-top:20px;align-items:center}main#login div.overflow section form .wrap a{font-size:20px;text-transform:uppercase}main#login div.overflow section form .wrap button{background-color:var(--btn-green);border-radius:100px;border:none;height:56px;width:56px;padding:3px;outline:none;cursor:pointer}main#login div.overflow section form .wrap button:disabled{opacity:.8;cursor:not-allowed}main#login div.overflow section form .wrap button:disabled:hover{background-color:var(--btn-green)}main#login div.overflow section form .wrap button:disabled:active{background-color:var(--btn-green)}main#login div.overflow section form .wrap button:hover{background-color:#6eaf99}main#login div.overflow section form .wrap button:active{background-color:#436d5f}main#login div.overflow section form .wrap button svg{height:50px;width:50px}main#login div.overflow section form .wrap button span{display:none}@media(min-width: 768px){main#login div.overflow section form .wrap button{border-radius:var(--radius);width:210px;flex-direction:row;justify-content:space-evenly;align-items:center;padding:0 10px}main#login div.overflow section form .wrap button span{display:flex;color:var(--white);font-weight:400;font-size:30px;text-transform:uppercase}}@media(min-width: 768px){main#login{justify-content:center;align-items:center}main#login div.overflow{max-width:768px}}#app{flex-direction:column;background-color:var(--bg-color)}#app header{background-color:var(--header-color);height:66px;flex-direction:row;padding:var(--space);width:100%;justify-content:center}#app header button{height:50px;width:50px;padding:0;background-color:transparent;border:none;outline:none;position:absolute;left:10px}#app header nav{background-color:var(--header-color);position:fixed;top:66px;left:0;height:100vh;width:95%;flex-direction:column;align-items:center;padding:var(--space);transform:translateX(-768px);transition:ease-in .5s}#app header nav div{flex-direction:column}#app header nav div.profile{align-items:center;height:70vh;justify-content:space-between}#app header nav div.profile>div{align-items:center}#app header nav div.profile>div img{height:160px;width:160px;border-radius:100%}#app header nav div.profile>div strong{font-size:30px;font-weight:700;color:var(--white);text-transform:uppercase}#app header nav div.profile>div strong svg{height:200px}#app header nav div.profile div.links ul{flex-direction:column;margin:0;padding:0;width:100%;align-items:center}#app header nav div.profile div.links ul li a{font-size:30px;font-weight:700;color:var(--white);text-transform:uppercase;text-decoration:none}#app header nav div.profile div.links ul li+li{margin-top:40px}#app header nav.open{transition:ease-out .5s;width:100%;position:fixed;left:0;transform:translateX(0px);overflow-x:scroll}#app header div.logo{align-items:center;width:100%;justify-content:center;cursor:pointer}#app header div.logo h1{display:none;font-size:calc(var(--space) * 5);font-weight:700;color:var(--white);text-transform:uppercase;margin:0 var(--space)}#app main{flex-direction:column;padding:var(--space);color:var(--text-color)}#app main section{display:none;flex-direction:column;background-color:rgba(255,255,255,.9);border-radius:var(--radius);width:100%;height:calc(100vh - 86px);justify-content:space-between}#app main section.show{display:flex}#app main section header{background-color:transparent;justify-content:center;align-items:center}#app main section header h2{font-weight:700;text-transform:uppercase;font-size:30px}#app main section footer{height:100px;padding:calc(var(--space) * 2);justify-content:center;align-items:center}#app main section footer a{background-color:var(--btn-green);width:100%;border-radius:var(--radius);padding:var(--space);justify-content:center;align-items:center;color:var(--white);font-size:25px;text-transform:uppercase;font-weight:700}#app main section footer a img{margin-right:var(--space)}#app main section div.contents{flex-direction:column;overflow-y:scroll}#app main section div.contents details{background-color:var(--white);padding:calc(var(--space) * 2);margin:var(--space);border-radius:var(--radius);cursor:default}#app main section div.contents details p,#app main section div.contents details span{font-size:25px}#app main section div.contents details p{font-weight:300;width:100%;display:flex;justify-content:space-between}#app main section div.contents details span{font-weight:400}#app main section div.contents details a{background-color:var(--btn-purple);font-size:20px;justify-content:center;align-items:center;width:100%;color:var(--white);padding:10px;display:flex;text-transform:uppercase;border-radius:var(--radius);cursor:pointer}#app main section div.contents details a img{margin-right:var(--space)}#app main section div.contents details summary{outline:none;font-size:25px;font-weight:500;text-align:center;padding:0;cursor:pointer}#app main section#new_vault header{background-color:var(--section-header-color);border-radius:var(--radius) var(--radius) 0 0}#app main section#new_vault form{background-color:var(--white);flex-direction:column;height:100%;justify-content:space-between;border-radius:0 0 var(--radius) var(--radius);overflow-x:scroll}#app main section#new_vault form .fields{flex-direction:column}#app main section#new_vault form .field{flex-direction:column;border:var(--border);border-radius:var(--radius);padding:10px;margin:10px 0;width:100%;transition:all .5s;background-color:var(--white)}#app main section#new_vault form .field label{font-weight:500}#app main section#new_vault form .field input{border:none;padding:5px 0;outline:none;font-size:20px}#app main section#new_vault form .field.loading{background-color:#eee}#app main section#new_vault form .field.loading input{background-color:#eee}#app main section#new_vault form div{flex-direction:column;padding:var(--space)}#app main section#new_vault form div strong,#app main section#new_vault form div small{text-align:center}#app main section#new_vault form div strong{font-size:20px;font-weight:700;text-transform:uppercase}#app main section#new_vault form footer{background-color:var(--section-header-color);border-radius:0 0 var(--radius) var(--radius);height:67px}#app main section#new_vault form footer button{height:62px;background-color:var(--btn-green);width:100%;border-radius:var(--radius);padding:var(--space);justify-content:center;align-items:center;color:var(--white);font-size:30px;text-transform:uppercase;font-weight:700;border:none}#app main section#new_vault form footer button span{display:none;font-size:25px;font-weight:700;color:var(--white);text-transform:uppercase;margin-left:var(--space)}#app main section#new_vault form footer a{width:170px;margin-right:40px;font-size:20px;background-color:var(--btn-cancel)}#app main section#edit_vault header{justify-content:space-between}#app main section#edit_vault header button{display:flex;left:inherit;position:inherit}#app main section#edit_vault div{background-color:var(--white);flex-direction:column;padding:var(--space)}#app main section#edit_vault div.novault{background-color:transparent;justify-content:center;align-items:center;height:100%}#app main section#edit_vault div.novault p a{display:inline}#app main section#edit_vault div h3{font-size:30px;font-weight:300;text-align:center}#app main section#edit_vault div.values{flex-direction:column;justify-content:center;align-items:center}#app main section#edit_vault div.values .value{flex-direction:column;align-items:center;margin:20px;font-size:30px}#app main section#edit_vault div.values .value p{font-weight:300;margin:0}#app main section#edit_vault div hr{border:3px solid #73613b;width:90%;border-radius:var(--radius)}#app main section#edit_vault div.history{flex-direction:row;justify-content:space-between;align-items:center}#app main section#edit_vault div.history>div p,#app main section#edit_vault div.history>div span{font-size:20px;margin:var(--space) 0}#app main section#edit_vault div.history>div span{font-weight:500}#app main section#edit_vault div.history div button{outline:none;background-color:transparent;border:none;cursor:pointer}#app main section#edit_vault div.history div button:hover{opacity:.8}#app main section#edit_vault div.history div button:active{opacity:.5}#app main section#edit_vault footer{background-color:var(--section-header-color);padding:0;flex-direction:column-reverse;border-radius:0 0 var(--radius) var(--radius)}#app main section#edit_vault footer div{background-color:transparent}#app main section#edit_vault footer div.buttons{flex-direction:row;width:100%;justify-content:space-between;display:flex}#app main section#edit_vault footer div.buttons a{height:50px;width:50px;background-color:var(--btn-cancel)}#app main section#edit_vault footer div.buttons a img{margin:0}#app main section#edit_vault footer div.buttons a span{display:none}#app main section#edit_vault footer div.buttons button{background-color:var(--btn-green);border-radius:var(--radius);border:0;outline:none;justify-content:center;align-items:center;width:250px;font-size:20px;font-weight:700;color:var(--white);text-transform:uppercase}#app main section#edit_vault footer div.buttons button img{margin-right:var(--space)}#app main section#edit_vault footer div.buttons button:disabled{opacity:.5;cursor:not-allowed}#app main section#edit_vault footer div.add_values{display:none;background-color:var(--section-header-color);border-radius:0 0 var(--radius) var(--radius);position:relative;bottom:97px;width:100%;height:500px}#app main section#edit_vault footer div.add_values.open{display:flex}#app main section#edit_vault footer div.add_values form{flex-direction:column}#app main section#edit_vault footer div.add_values form p{font-weight:700;font-size:20px;text-transform:uppercase;text-align:center}#app main section#edit_vault footer div.add_values form .fields{flex-direction:column}#app main section#edit_vault footer div.add_values form .field{flex-direction:column;border:var(--border);border-radius:var(--radius);padding:10px;margin:10px 0;width:100%;transition:all .5s;background-color:var(--white)}#app main section#edit_vault footer div.add_values form .field label{font-weight:500}#app main section#edit_vault footer div.add_values form .field input{border:none;padding:5px 0;outline:none;font-size:20px}#app main section#edit_vault footer div.add_values form .field.loading{background-color:#eee}#app main section#edit_vault footer div.add_values form .field.loading input{background-color:#eee}#app main section#edit_vault footer div.add_values form .buttons{display:none}#app main section#edit_vault footer div.add_values form .buttons button[type=button]{width:50px;height:50px;margin-right:var(--space)}#app main section#edit_vault footer div.add_values form .buttons button[type=button] img{margin:0}#app main section#edit_vault footer div.add_values form .buttons button[type=button] span{display:none}@media(min-width: 768px){#app{background-color:#ebeaf1;overflow:hidden}#app header{height:100px;flex-direction:row-reverse}#app header button{display:none}#app header nav{width:100%;flex-direction:column;margin-right:10px;background-color:transparent;position:relative;top:3px;transform:none;height:inherit;padding:0;align-items:flex-end}#app header nav.open{overflow-x:hidden}#app header nav div{flex-direction:column}#app header nav div.profile{flex-direction:column;justify-content:center;margin-top:-30px;margin-right:10px;align-items:flex-end}#app header nav div.profile>div{align-items:center;flex-direction:row-reverse}#app header nav div.profile>div img{height:78px;width:78px;margin-left:50px}#app header nav div.profile>div strong{font-size:30px;font-weight:700;color:var(--white);text-transform:uppercase;margin-top:-40px}#app header nav div.profile>div strong svg{height:100px}#app header nav div.profile div.links{flex-direction:row;margin-top:-30px;position:relative;right:70px}#app header nav div.profile div.links ul{flex-direction:row;margin-right:60px}#app header nav div.profile div.links ul li{margin:0 10px}#app header nav div.profile div.links ul li a{font-size:20px;font-weight:300;color:var(--white);text-transform:uppercase;text-decoration:none}#app header nav div.profile div.links ul li+li{margin:0}#app header div.logo{align-items:center;justify-content:end;margin-left:10px}#app header div.logo img{height:74px;width:74px}#app header div.logo h1{display:flex}#app main section{background-color:transparent}#app main section#vaults{justify-content:space-between}#app main section#vaults div.contents{display:grid;grid-template-columns:repeat(4, 1fr)}#app main section#vaults footer{position:relative;bottom:10px;justify-content:flex-end;padding:0;margin:20px 9px}#app main section#vaults footer a{width:initial}#app main section#new_vault header{background-color:var(--section-header-color);border-radius:var(--radius) var(--radius) 0 0;height:0;margin-top:15px}#app main section#new_vault form{background-color:transparent;flex-direction:column;height:100%;justify-content:space-between;border-radius:0 0 var(--radius) var(--radius);overflow-x:scroll}#app main section#new_vault form .fields{flex-direction:column}#app main section#new_vault form .field{flex-direction:column;border:var(--border);border-radius:var(--radius);padding:10px;margin:10px 0;width:100%;transition:all .5s;background-color:var(--white)}#app main section#new_vault form .field label{font-weight:500}#app main section#new_vault form .field input{border:none;padding:5px 0;outline:none;font-size:20px}#app main section#new_vault form .field.loading{background-color:#eee}#app main section#new_vault form .field.loading input{background-color:#eee}#app main section#new_vault form div{flex-direction:column;padding:var(--space)}#app main section#new_vault form div strong,#app main section#new_vault form div small{text-align:center}#app main section#new_vault form div strong{font-size:20px;font-weight:700;text-transform:uppercase}#app main section#new_vault form div .fields{flex-direction:row}#app main section#new_vault form div .fields .field+.field{margin-left:var(--space)}#app main section#new_vault form footer{background-color:var(--section-header-color);border-radius:0 0 var(--radius) var(--radius);height:67px;margin-bottom:30px;width:100%;justify-content:flex-end}#app main section#new_vault form footer button{background-color:var(--btn-green);width:300px;border-radius:var(--radius);border:flex;justify-content:center;align-items:center;height:inherit}#app main section#new_vault form footer button span{display:block}#app main section#edit_vault{height:100vh;overflow-x:scroll;padding-bottom:120px}#app main section#edit_vault header{justify-content:center}#app main section#edit_vault header button{margin-right:20px}#app main section#edit_vault>div div#history{display:grid;grid-template-columns:repeat(4, 1fr);grid-gap:30px}#app main section#edit_vault footer div.buttons{display:flex}#app main section#edit_vault footer div.buttons a{height:50px;width:170px}#app main section#edit_vault footer div.buttons a span{display:flex}#app main section#edit_vault footer div.add_values{display:none;bottom:80px}#app main section#edit_vault footer div.add_values form div.fields{flex-direction:row}#app main section#edit_vault footer div.add_values form div.fields .field+.field{margin-left:10px}#app main section#edit_vault footer div.add_values form div.buttons{display:flex}#app main section#edit_vault footer div.add_values form div.buttons button[type=button]{background-color:var(--btn-cancel);width:180px}#app main section#edit_vault footer div.add_values form div.buttons button[type=button] span{margin-left:var(--space);display:flex}}#app main section#profile div.contents form{flex-direction:column;padding:var(--space);width:100%}#app main section#profile div.contents form div.photo{flex-direction:column;width:100%;justify-content:center;align-items:center}#app main section#profile div.contents form div.photo img{border-radius:100%;max-width:500px;height:auto;width:100%;padding:var(--space)}#app main section#profile div.contents form div.photo input[type=file]{display:none}#app main section#profile div.contents form div.photo button{background-color:var(--btn-green);border:none;height:50px;justify-content:center;align-items:center;color:#fff;font-size:20px;margin:var(--space);border-radius:var(--radius);outline:none;text-transform:uppercase}#app main section#profile div.contents form div.fields{flex-direction:column;width:100%}#app main section#profile div.contents form div.fields .fields{flex-direction:column}#app main section#profile div.contents form div.fields .field{flex-direction:column;border:var(--border);border-radius:var(--radius);padding:10px;margin:10px 0;width:100%;transition:all .5s;background-color:var(--white)}#app main section#profile div.contents form div.fields .field label{font-weight:500}#app main section#profile div.contents form div.fields .field input{border:none;padding:5px 0;outline:none;font-size:20px}#app main section#profile div.contents form div.fields .field.loading{background-color:#eee}#app main section#profile div.contents form div.fields .field.loading input{background-color:#eee}#app main section#profile footer{flex-direction:row}#app main section#profile footer a{width:170px;margin-right:40px;font-size:20px;background-color:var(--btn-cancel);height:50px}#app main section#profile footer a span{display:none}#app main section#profile footer button{background-color:var(--btn-green);border:none;height:50px;justify-content:center;align-items:center;color:#fff;font-size:20px;margin:var(--space);border-radius:var(--radius);outline:none;text-transform:uppercase}@media(min-width: 768px){#app main section#profile div.contents{flex-direction:row}#app main section#profile div.contents form{flex-direction:row}#app main section#profile div.contents form div.photo{justify-content:flex-start}#app main section#profile div.contents form div.photo img{max-width:320px}#app main section#profile footer{margin-bottom:20px}#app main section#profile footer a span{display:inline}}/*# sourceMappingURL=stylesheet.css.map */
+@font-face {
+  font-family: "Fonte";
+  src: local("Roboto Thin"), url("../fonts/Roboto-Thin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fonte";
+  src: local("Roboto Light"), url("../fonts/Roboto-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fonte";
+  src: local("Roboto Regular"), url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fonte";
+  src: local("Roboto Medium"), url("../fonts/Roboto-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fonte";
+  src: local("Roboto Bold"), url("../fonts/Roboto-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fonte";
+  src: local("Roboto Black"), url("../fonts/Roboto-Black.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+:root {
+  --bg-color: #612F74;
+  --header-color: #3C2E80;
+  --section-header-color: #EFEBF1;
+  --text-color: #333;
+  --white: #FFF;
+  --border: 1px solid #333333;
+  --btn-green: #247350;
+  --btn-purple: #362973;
+  --btn-cancel: #732424;
+  --radius: 10px;
+  --space: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Fonte", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+body, main, div, section, header, article, footer, form, button, nav, ul, li, a {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.9;
+}
+a:active {
+  opacity: 0.7;
+}
+
+button {
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.9;
+}
+button:active {
+  opacity: 0.7;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3c2e80;
+  border: 11px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+
+::-webkit-scrollbar-track {
+  background: #612f74;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #40204c;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #27142e;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.input-error {
+  border: 1px solid red !important;
+}
+
+.input-focus {
+  box-shadow: 0px 0px 5px #612f74;
+}
+
+#loading {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 5;
+  background-color: var(--bg-color);
+}
+
+.alert.success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+.alert.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+main#login {
+  background-color: var(--bg-color);
+  height: 100vh;
+  width: 100vw;
+}
+main#login div.overflow {
+  margin-left: 20px;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-right: 20px;
+}
+main#login div.overflow section {
+  flex-direction: column;
+  background-color: var(--white);
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  width: 90%;
+  transition: 0.7s;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  align-self: center;
+  /*&.signup {
+      position: absolute;
+      left: -1000px;
+      z-index: 0;
+      opacity: 0;
+      &.show {
+          left: 0;
+          z-index: 2;
+          opacity: 1;
+      }
+  }
+  &.access {
+      position: absolute;
+      left: -1000px;
+      z-index: 1;
+      &.show {
+          left: 0;
+          z-index: 2;
+      }
+  }
+  &.forget {
+      position: absolute;
+      right: 1000px;
+      z-index: 0;
+      &.show {
+          right: 0;
+          z-index: 2;
+      }
+  }*/
+}
+main#login div.overflow section.signup, main#login div.overflow section.access, main#login div.overflow section.forget {
+  position: absolute;
+  transform: scale(0.5);
+  z-index: 0;
+  opacity: 0;
+}
+main#login div.overflow section.signup.show, main#login div.overflow section.access.show, main#login div.overflow section.forget.show {
+  transform: scale(1);
+  z-index: 2;
+  opacity: 1;
+}
+main#login div.overflow section h2 {
+  color: var(--text-color);
+  text-align: center;
+  text-transform: uppercase;
+}
+main#login div.overflow section form {
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+}
+main#login div.overflow section form .fields {
+  flex-direction: column;
+}
+main#login div.overflow section form .field {
+  flex-direction: column;
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  transition: all 0.5s;
+  background-color: var(--white);
+}
+main#login div.overflow section form .field label {
+  font-weight: 500;
+}
+main#login div.overflow section form .field input {
+  border: none;
+  padding: 5px 0;
+  outline: none;
+  font-size: 20px;
+}
+main#login div.overflow section form .field.loading {
+  background-color: #eee;
+}
+main#login div.overflow section form .field.loading input {
+  background-color: #eee;
+}
+main#login div.overflow section form a {
+  text-align: right;
+}
+main#login div.overflow section form hr {
+  border: var(--border);
+  width: 100%;
+}
+main#login div.overflow section form .wrap {
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: center;
+}
+main#login div.overflow section form .wrap a {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+main#login div.overflow section form .wrap button {
+  background-color: var(--btn-green);
+  border-radius: 100px;
+  border: none;
+  height: 56px;
+  width: 56px;
+  padding: 3px;
+  outline: none;
+  cursor: pointer;
+}
+main#login div.overflow section form .wrap button:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+main#login div.overflow section form .wrap button:disabled:hover {
+  background-color: var(--btn-green);
+}
+main#login div.overflow section form .wrap button:disabled:active {
+  background-color: var(--btn-green);
+}
+main#login div.overflow section form .wrap button:hover {
+  background-color: #6eaf99;
+}
+main#login div.overflow section form .wrap button:active {
+  background-color: #436d5f;
+}
+main#login div.overflow section form .wrap button svg {
+  height: 50px;
+  width: 50px;
+}
+main#login div.overflow section form .wrap button span {
+  display: none;
+}
+@media (min-width: 768px) {
+  main#login div.overflow section form .wrap button {
+    border-radius: var(--radius);
+    width: 210px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 10px;
+  }
+  main#login div.overflow section form .wrap button span {
+    display: flex;
+    color: var(--white);
+    font-weight: 400;
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+}
+
+@media (min-width: 768px) {
+  main#login {
+    justify-content: center;
+    align-items: center;
+  }
+  main#login div.overflow {
+    max-width: 768px;
+  }
+}
+#app {
+  flex-direction: column;
+  background-color: var(--bg-color);
+}
+#app header {
+  background-color: var(--header-color);
+  height: 66px;
+  flex-direction: row;
+  padding: var(--space);
+  width: 100%;
+  justify-content: center;
+}
+#app header button {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: 10px;
+}
+#app header nav {
+  background-color: var(--header-color);
+  position: fixed;
+  top: 66px;
+  left: 0;
+  height: 100vh;
+  width: 95%;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space);
+  transform: translateX(-768px);
+  transition: ease-in 0.5s;
+}
+#app header nav div {
+  flex-direction: column;
+}
+#app header nav div.profile {
+  align-items: center;
+  height: 70vh;
+  justify-content: space-between;
+}
+#app header nav div.profile > div {
+  align-items: center;
+}
+#app header nav div.profile > div img {
+  height: 160px;
+  width: 160px;
+  border-radius: 100%;
+}
+#app header nav div.profile > div strong {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+}
+#app header nav div.profile > div strong svg {
+  height: 200px;
+}
+#app header nav div.profile div.links ul {
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  align-items: center;
+}
+#app header nav div.profile div.links ul li a {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+#app header nav div.profile div.links ul li + li {
+  margin-top: 40px;
+}
+#app header nav.open {
+  transition: ease-out 0.5s;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  transform: translateX(0px);
+  overflow-x: scroll;
+}
+#app header div.logo {
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  cursor: pointer;
+}
+#app header div.logo h1 {
+  display: none;
+  font-size: calc(var(--space) * 5);
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  margin: 0 var(--space);
+}
+#app main {
+  flex-direction: column;
+  padding: var(--space);
+  color: var(--text-color);
+}
+#app main section {
+  display: none;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius);
+  width: 100%;
+  height: calc(100vh - 86px);
+  justify-content: space-between;
+}
+#app main section.show {
+  display: flex;
+}
+#app main section header {
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+}
+#app main section header h2 {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+#app main section footer {
+  height: 100px;
+  padding: calc(var(--space) * 2);
+  justify-content: center;
+  align-items: center;
+}
+#app main section footer a {
+  background-color: var(--btn-green);
+  width: 100%;
+  border-radius: var(--radius);
+  padding: var(--space);
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+#app main section footer a img {
+  margin-right: var(--space);
+}
+#app main section div.contents {
+  flex-direction: column;
+  overflow-y: scroll;
+}
+#app main section div.contents details {
+  background-color: var(--white);
+  padding: calc(var(--space) * 2);
+  margin: var(--space);
+  border-radius: var(--radius);
+  cursor: default;
+}
+#app main section div.contents details p, #app main section div.contents details span {
+  font-size: 25px;
+}
+#app main section div.contents details p {
+  font-weight: 300;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#app main section div.contents details span {
+  font-weight: 400;
+}
+#app main section div.contents details a {
+  background-color: var(--btn-purple);
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: var(--white);
+  padding: 10px;
+  display: flex;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+#app main section div.contents details a img {
+  margin-right: var(--space);
+}
+#app main section div.contents details summary {
+  outline: none;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+  padding: 0;
+  cursor: pointer;
+}
+#app main section#new_vault header {
+  background-color: var(--section-header-color);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+#app main section#new_vault form {
+  background-color: var(--white);
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  border-radius: 0 0 var(--radius) var(--radius);
+  overflow-x: scroll;
+}
+#app main section#new_vault form .fields {
+  flex-direction: column;
+}
+#app main section#new_vault form .field {
+  flex-direction: column;
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  transition: all 0.5s;
+  background-color: var(--white);
+}
+#app main section#new_vault form .field label {
+  font-weight: 500;
+}
+#app main section#new_vault form .field input {
+  border: none;
+  padding: 5px 0;
+  outline: none;
+  font-size: 20px;
+}
+#app main section#new_vault form .field.loading {
+  background-color: #eee;
+}
+#app main section#new_vault form .field.loading input {
+  background-color: #eee;
+}
+#app main section#new_vault form div {
+  flex-direction: column;
+  padding: var(--space);
+}
+#app main section#new_vault form div strong, #app main section#new_vault form div small {
+  text-align: center;
+}
+#app main section#new_vault form div strong {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+#app main section#new_vault form footer {
+  background-color: var(--section-header-color);
+  border-radius: 0 0 var(--radius) var(--radius);
+  height: 67px;
+}
+#app main section#new_vault form footer button {
+  height: 62px;
+  background-color: var(--btn-green);
+  width: 100%;
+  border-radius: var(--radius);
+  padding: var(--space);
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+}
+#app main section#new_vault form footer button span {
+  display: none;
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  margin-left: var(--space);
+}
+#app main section#new_vault form footer a {
+  width: 170px;
+  margin-right: 40px;
+  font-size: 20px;
+  background-color: var(--btn-cancel);
+}
+#app main section#edit_vault header {
+  justify-content: space-between;
+}
+#app main section#edit_vault header button {
+  display: flex;
+  left: inherit;
+  position: inherit;
+}
+#app main section#edit_vault div {
+  background-color: var(--white);
+  flex-direction: column;
+  padding: var(--space);
+}
+#app main section#edit_vault div.novault {
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+#app main section#edit_vault div.novault p a {
+  display: inline;
+}
+#app main section#edit_vault div h3 {
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+}
+#app main section#edit_vault div.values {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#app main section#edit_vault div.values .value {
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  font-size: 30px;
+}
+#app main section#edit_vault div.values .value p {
+  font-weight: 300;
+  margin: 0;
+}
+#app main section#edit_vault div hr {
+  border: 3px solid #73613B;
+  width: 90%;
+  border-radius: var(--radius);
+}
+#app main section#edit_vault div.history {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#app main section#edit_vault div.history > div p, #app main section#edit_vault div.history > div span {
+  font-size: 20px;
+  margin: var(--space) 0;
+}
+#app main section#edit_vault div.history > div span {
+  font-weight: 500;
+}
+#app main section#edit_vault div.history div button {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#app main section#edit_vault div.history div button:hover {
+  opacity: 0.8;
+}
+#app main section#edit_vault div.history div button:active {
+  opacity: 0.5;
+}
+#app main section#edit_vault footer {
+  background-color: var(--section-header-color);
+  padding: 0;
+  flex-direction: column-reverse;
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+#app main section#edit_vault footer div {
+  background-color: transparent;
+}
+#app main section#edit_vault footer div.buttons {
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+#app main section#edit_vault footer div.buttons a {
+  height: 50px;
+  width: 50px;
+  background-color: var(--btn-cancel);
+}
+#app main section#edit_vault footer div.buttons a img {
+  margin: 0;
+}
+#app main section#edit_vault footer div.buttons a span {
+  display: none;
+}
+#app main section#edit_vault footer div.buttons button {
+  background-color: var(--btn-green);
+  border-radius: var(--radius);
+  border: 0;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+}
+#app main section#edit_vault footer div.buttons button img {
+  margin-right: var(--space);
+}
+#app main section#edit_vault footer div.buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+#app main section#edit_vault footer div.add_values {
+  display: none;
+  background-color: var(--section-header-color);
+  border-radius: 0 0 var(--radius) var(--radius);
+  position: relative;
+  bottom: 97px;
+  width: 100%;
+  height: 500px;
+}
+#app main section#edit_vault footer div.add_values.open {
+  display: flex;
+}
+#app main section#edit_vault footer div.add_values form {
+  flex-direction: column;
+}
+#app main section#edit_vault footer div.add_values form p {
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+#app main section#edit_vault footer div.add_values form .fields {
+  flex-direction: column;
+}
+#app main section#edit_vault footer div.add_values form .field {
+  flex-direction: column;
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  transition: all 0.5s;
+  background-color: var(--white);
+}
+#app main section#edit_vault footer div.add_values form .field label {
+  font-weight: 500;
+}
+#app main section#edit_vault footer div.add_values form .field input {
+  border: none;
+  padding: 5px 0;
+  outline: none;
+  font-size: 20px;
+}
+#app main section#edit_vault footer div.add_values form .field.loading {
+  background-color: #eee;
+}
+#app main section#edit_vault footer div.add_values form .field.loading input {
+  background-color: #eee;
+}
+#app main section#edit_vault footer div.add_values form .buttons {
+  display: flex;
+}
+#app main section#edit_vault footer div.add_values form .buttons button[type=button] {
+  width: 50px;
+  height: 50px;
+  margin-right: var(--space);
+}
+#app main section#edit_vault footer div.add_values form .buttons button[type=button] img {
+  margin: 0;
+}
+#app main section#edit_vault footer div.add_values form .buttons button[type=button] span {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #app {
+    background-color: #EBEAF1;
+    overflow: hidden;
+  }
+  #app header {
+    height: 100px;
+    flex-direction: row-reverse;
+  }
+  #app header button {
+    display: none;
+  }
+  #app header nav {
+    width: 100%;
+    flex-direction: column;
+    margin-right: 10px;
+    background-color: transparent;
+    position: relative;
+    top: 3px;
+    transform: none;
+    height: inherit;
+    padding: 0;
+    align-items: flex-end;
+  }
+  #app header nav div {
+    flex-direction: column;
+  }
+  #app header nav div.profile {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -30px;
+    align-items: flex-end;
+  }
+  #app header nav div.profile > div {
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+  #app header nav div.profile > div img {
+    height: 78px;
+    width: 78px;
+    margin-left: 50px;
+  }
+  #app header nav div.profile > div strong {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    margin-top: -40px;
+  }
+  #app header nav div.profile > div strong svg {
+    height: 100px;
+  }
+  #app header nav div.profile div.links {
+    flex-direction: row;
+    margin-top: -30px;
+    position: relative;
+    right: 70px;
+  }
+  #app header nav div.profile div.links ul {
+    flex-direction: row;
+    margin-right: 60px;
+  }
+  #app header nav div.profile div.links ul li {
+    margin: 0 10px;
+  }
+  #app header nav div.profile div.links ul li a {
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--white);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  #app header nav div.profile div.links ul li + li {
+    margin: 0;
+  }
+  #app header div.logo {
+    align-items: center;
+    width: 60%;
+    justify-content: end;
+    margin-left: 10px;
+  }
+  #app header div.logo img {
+    height: 74px;
+    width: 74px;
+  }
+  #app header div.logo h1 {
+    display: flex;
+  }
+  #app main section {
+    background-color: transparent;
+  }
+  #app main section#vaults {
+    justify-content: space-between;
+  }
+  #app main section#vaults div.contents {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  #app main section#vaults footer {
+    position: relative;
+    bottom: 10px;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 20px 9px;
+  }
+  #app main section#vaults footer a {
+    width: initial;
+  }
+  #app main section#new_vault header {
+    background-color: var(--section-header-color);
+    border-radius: var(--radius) var(--radius) 0 0;
+    height: 0;
+    margin-top: 15px;
+  }
+  #app main section#new_vault form {
+    background-color: transparent;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    border-radius: 0 0 var(--radius) var(--radius);
+    overflow-x: scroll;
+  }
+  #app main section#new_vault form .fields {
+    flex-direction: column;
+  }
+  #app main section#new_vault form .field {
+    flex-direction: column;
+    border: var(--border);
+    border-radius: var(--radius);
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    transition: all 0.5s;
+    background-color: var(--white);
+  }
+  #app main section#new_vault form .field label {
+    font-weight: 500;
+  }
+  #app main section#new_vault form .field input {
+    border: none;
+    padding: 5px 0;
+    outline: none;
+    font-size: 20px;
+  }
+  #app main section#new_vault form .field.loading {
+    background-color: #eee;
+  }
+  #app main section#new_vault form .field.loading input {
+    background-color: #eee;
+  }
+  #app main section#new_vault form div {
+    flex-direction: column;
+    padding: var(--space);
+  }
+  #app main section#new_vault form div strong, #app main section#new_vault form div small {
+    text-align: center;
+  }
+  #app main section#new_vault form div strong {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  #app main section#new_vault form div .fields {
+    flex-direction: row;
+  }
+  #app main section#new_vault form div .fields .field + .field {
+    margin-left: var(--space);
+  }
+  #app main section#new_vault form footer {
+    background-color: var(--section-header-color);
+    border-radius: 0 0 var(--radius) var(--radius);
+    height: 67px;
+    margin-bottom: 30px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  #app main section#new_vault form footer button {
+    background-color: var(--btn-green);
+    width: 300px;
+    border-radius: var(--radius);
+    border: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+  }
+  #app main section#new_vault form footer button span {
+    display: block;
+  }
+  #app main section#edit_vault {
+    height: 100vh;
+    overflow-x: scroll;
+    padding-bottom: 120px;
+  }
+  #app main section#edit_vault header {
+    justify-content: center;
+  }
+  #app main section#edit_vault header button {
+    margin-right: 20px;
+  }
+  #app main section#edit_vault > div div#history {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+  }
+  #app main section#edit_vault footer div.buttons {
+    display: flex;
+  }
+  #app main section#edit_vault footer div.buttons a {
+    height: 50px;
+    width: 170px;
+  }
+  #app main section#edit_vault footer div.buttons a span {
+    display: flex;
+  }
+  #app main section#edit_vault footer div.add_values {
+    display: none;
+    bottom: 80px;
+  }
+  #app main section#edit_vault footer div.add_values form div.fields {
+    flex-direction: row;
+  }
+  #app main section#edit_vault footer div.add_values form div.fields .field + .field {
+    margin-left: 10px;
+  }
+  #app main section#edit_vault footer div.add_values form div.buttons {
+    display: flex;
+  }
+  #app main section#edit_vault footer div.add_values form div.buttons button[type=button] {
+    background-color: var(--btn-cancel);
+    width: 180px;
+  }
+  #app main section#edit_vault footer div.add_values form div.buttons button[type=button] span {
+    margin-left: var(--space);
+    display: flex;
+  }
+}
+#app main section#profile div.contents form {
+  flex-direction: column;
+  padding: var(--space);
+  width: 100%;
+}
+#app main section#profile div.contents form div.photo {
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+#app main section#profile div.contents form div.photo img {
+  border-radius: 100%;
+  max-width: 500px;
+  height: auto;
+  width: 100%;
+  padding: var(--space);
+}
+#app main section#profile div.contents form div.photo input[type=file] {
+  display: none;
+}
+#app main section#profile div.contents form div.photo button {
+  background-color: var(--btn-green);
+  border: none;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-size: 20px;
+  margin: var(--space);
+  border-radius: var(--radius);
+  outline: none;
+  text-transform: uppercase;
+}
+#app main section#profile div.contents form div.fields {
+  flex-direction: column;
+  width: 100%;
+}
+#app main section#profile div.contents form div.fields .fields {
+  flex-direction: column;
+}
+#app main section#profile div.contents form div.fields .field {
+  flex-direction: column;
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  transition: all 0.5s;
+  background-color: var(--white);
+}
+#app main section#profile div.contents form div.fields .field label {
+  font-weight: 500;
+}
+#app main section#profile div.contents form div.fields .field input {
+  border: none;
+  padding: 5px 0;
+  outline: none;
+  font-size: 20px;
+}
+#app main section#profile div.contents form div.fields .field.loading {
+  background-color: #eee;
+}
+#app main section#profile div.contents form div.fields .field.loading input {
+  background-color: #eee;
+}
+#app main section#profile footer {
+  flex-direction: row;
+}
+#app main section#profile footer a {
+  width: 170px;
+  margin-right: 40px;
+  font-size: 20px;
+  background-color: var(--btn-cancel);
+  height: 50px;
+}
+#app main section#profile footer a span {
+  display: none;
+}
+#app main section#profile footer button {
+  background-color: var(--btn-green);
+  border: none;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-size: 20px;
+  margin: var(--space);
+  border-radius: var(--radius);
+  outline: none;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  #app main section#profile div.contents {
+    flex-direction: row;
+  }
+  #app main section#profile div.contents form {
+    flex-direction: row;
+  }
+  #app main section#profile div.contents form div.photo {
+    justify-content: flex-start;
+  }
+  #app main section#profile div.contents form div.photo img {
+    max-width: 320px;
+  }
+  #app main section#profile footer {
+    margin-bottom: 20px;
+  }
+  #app main section#profile footer a span {
+    display: inline;
+  }
+}
+/*section {
+    &#profile {
+
+            &.contents {
+                flex-direction: column;
+                form {
+                    flex-direction: column;
+                    width: 100%;
+                    padding: var(--space);
+                    @include field;
+                    &.change_photo {
+                        flex-direction: column;
+                        width: 100%;
+                        img {
+                            padding: 50px;
+                            max-width: 80%;
+                            max-height: 270px;
+                        }
+                        input[type=file] {
+                            display: none;
+                        }
+                        button {
+                            background-color: var(--btn-green);
+                            border: none;
+                            height: 50px;
+                            justify-content: center;
+                            align-items: center;
+                            color: #FFF;
+                            font-size: 20px;
+                            margin: var(--space);
+                            border-radius: var(--radius);
+                        }
+                    }
+                }
+            }
+
+    }
+}*/
+
+/*# sourceMappingURL=stylesheet.css.map */
