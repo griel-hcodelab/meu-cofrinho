@@ -209,12 +209,13 @@ class ClassDOM
 
                 const backLink = section.querySelector("footer .buttons a");
                 const addValueDiv = section.querySelector("footer .add_values");
-                const addValueBtn = section.querySelector("footer .buttons button");
+                const addValueBtns = section.querySelector("footer .buttons button");
                 const addValueCancel = section.querySelector("footer div.add_values .buttons button[type=button]");
-                if (addValueBtn && addValueDiv && addValueCancel) {
-                    addValueBtn.addEventListener("click",()=>{
+                if (addValueBtns && addValueDiv && addValueCancel) {
+                    addValueBtns.addEventListener("click",()=>{
                         
                         this.util.menuHandler(addValueDiv);
+                        
                     })
                     addValueCancel.addEventListener("click",()=>{
             

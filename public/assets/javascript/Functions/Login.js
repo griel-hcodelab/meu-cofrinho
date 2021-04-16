@@ -47,7 +47,6 @@ document.querySelectorAll("main#login").forEach((page)=>{
                         item.classList.add("loading");
                     })
 
-                    button.disabled = true;
                     button.innerHTML = `<?xml version="1.0" encoding="utf-8"?>
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
                     <circle cx="50" cy="50" fill="none" stroke="#fff" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138">
@@ -68,7 +67,6 @@ document.querySelectorAll("main#login").forEach((page)=>{
 
                     const button = forgetForm.querySelector("button");
 
-                    button.disabled = true;
                     button.innerHTML = `<?xml version="1.0" encoding="utf-8"?>
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
                     <circle cx="50" cy="50" fill="none" stroke="#fff" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138">
@@ -100,7 +98,6 @@ document.querySelectorAll("main#login").forEach((page)=>{
                 accessForm.addEventListener("submit", (e)=>{ 
                     e.preventDefault();
 
-                    button.disabled = true;
                     button.innerHTML = `<?xml version="1.0" encoding="utf-8"?>
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
                     <circle cx="50" cy="50" fill="none" stroke="#fff" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138">
@@ -113,7 +110,6 @@ document.querySelectorAll("main#login").forEach((page)=>{
 
                 const inputs = accessForm.querySelectorAll("input");
                 inputs.forEach((input)=>{
-                    console.log(input)
                     input.addEventListener("focus", ()=>{
                         button.disabled = false;
                     })
