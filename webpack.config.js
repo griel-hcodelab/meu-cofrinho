@@ -10,13 +10,13 @@ module.exports = {
     },
     devtool: false,
     plugins: [
-        new CompressionPlugin({   
-            asset: "[path].gz[query]",
-            algorithm: "gzip",
-            test: /\.js$|\.css$|\.html$/,
-            minRatio: 0.8,
-            compressionOptions: { level: 9 },
+        new CompressionWebpackPlugin({
+            filename: '[path].gz[query]',
+            algorithm: 'gzip',
+            test: /\.(js|css|html|svg)$/,
+            threshold: 8192,
+            minRatio: 0.8
         })
-    ]
+      ]
     
 }
