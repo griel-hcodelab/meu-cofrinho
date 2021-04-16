@@ -94,3 +94,17 @@
         }
     }
 }
+
+@mixin button-green {
+    background-color: var(--btn-green);
+    border: none;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 20px;
+    margin: var(--space);
+    border-radius: var(--radius);
+    outline: none;
+    text-transform: uppercase;
+}

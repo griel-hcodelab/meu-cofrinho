@@ -393,6 +393,7 @@ main#login div.overflow section form .wrap button span {
 #app header nav div.profile > div img {
   height: 160px;
   width: 160px;
+  border-radius: 100%;
 }
 #app header nav div.profile > div strong {
   font-size: 30px;
@@ -482,7 +483,7 @@ main#login div.overflow section form .wrap button span {
   justify-content: center;
   align-items: center;
   color: var(--white);
-  font-size: 30px;
+  font-size: 25px;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -608,6 +609,7 @@ main#login div.overflow section form .wrap button span {
   border: none;
 }
 #app main section#new_vault form footer button span {
+  display: none;
   font-size: 25px;
   font-weight: 700;
   color: var(--white);
@@ -981,6 +983,9 @@ main#login div.overflow section form .wrap button span {
     align-items: center;
     height: inherit;
   }
+  #app main section#new_vault form footer button span {
+    display: block;
+  }
   #app main section#edit_vault {
     height: 100vh;
     overflow-x: scroll;
@@ -1023,5 +1028,133 @@ main#login div.overflow section form .wrap button span {
     display: flex;
   }
 }
+#profile div.contents form {
+  flex-direction: column;
+  padding: var(--space);
+}
+#profile div.contents form div.photo {
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+#profile div.contents form div.photo img {
+  border-radius: 100%;
+  max-width: 500px;
+  height: auto;
+  width: 100%;
+  padding: var(--space);
+}
+#profile div.contents form div.photo input[type=file] {
+  display: none;
+}
+#profile div.contents form div.photo button {
+  background-color: var(--btn-green);
+  border: none;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-size: 20px;
+  margin: var(--space);
+  border-radius: var(--radius);
+  outline: none;
+  text-transform: uppercase;
+}
+#profile div.contents form div.fields {
+  flex-direction: column;
+  width: 100%;
+}
+#profile div.contents form div.fields .fields {
+  flex-direction: column;
+}
+#profile div.contents form div.fields .field {
+  flex-direction: column;
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  transition: all 0.5s;
+  background-color: var(--white);
+}
+#profile div.contents form div.fields .field label {
+  font-weight: 500;
+}
+#profile div.contents form div.fields .field input {
+  border: none;
+  padding: 5px 0;
+  outline: none;
+  font-size: 20px;
+}
+#profile div.contents form div.fields .field.loading {
+  background-color: #eee;
+}
+#profile div.contents form div.fields .field.loading input {
+  background-color: #eee;
+}
+#profile footer {
+  flex-direction: row;
+}
+#profile footer button {
+  background-color: var(--btn-green);
+  border: none;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-size: 20px;
+  margin: var(--space);
+  border-radius: var(--radius);
+  outline: none;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  #profile div.contents {
+    flex-direction: row;
+  }
+  #profile div.contents form {
+    flex-direction: row;
+  }
+}
+/*section {
+    &#profile {
+
+            &.contents {
+                flex-direction: column;
+                form {
+                    flex-direction: column;
+                    width: 100%;
+                    padding: var(--space);
+                    @include field;
+                    &.change_photo {
+                        flex-direction: column;
+                        width: 100%;
+                        img {
+                            padding: 50px;
+                            max-width: 80%;
+                            max-height: 270px;
+                        }
+                        input[type=file] {
+                            display: none;
+                        }
+                        button {
+                            background-color: var(--btn-green);
+                            border: none;
+                            height: 50px;
+                            justify-content: center;
+                            align-items: center;
+                            color: #FFF;
+                            font-size: 20px;
+                            margin: var(--space);
+                            border-radius: var(--radius);
+                        }
+                    }
+                }
+            }
+
+    }
+}*/
 
 /*# sourceMappingURL=stylesheet.css.map */

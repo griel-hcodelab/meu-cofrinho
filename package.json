@@ -20,6 +20,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "firebase": "^8.3.2"
+    "cropperjs": "^1.5.11",
+    "firebase": "^8.3.2",
+    "imask": "^6.0.7"
   }
 }

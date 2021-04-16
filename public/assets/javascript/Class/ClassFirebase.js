@@ -4,15 +4,21 @@ import ClassDOM from '../Class/ClassDOM';
 
 class ClassFirebase
 {
-    constructor()
+    constructor() 
     {
         this.db = Firebase.firestore();
         this.utils = new Utils();
+        this.storage = Firebase.storage();
     }
 
     data()
     {
         return this.db;
+    }
+
+    getStorage()
+    {
+        return this.storage;
     }
 
     insert(data = {}, uid)
@@ -166,7 +172,37 @@ class ClassFirebase
         });
     }
 
+    updateProfile(uid, data = {})
+    {
+        console.log(uid, data)
 
+        const profile = this.db.collection(`profile`).doc(uid);
+
+        profile.set({
+            "name":data.name,
+            "birthday":data.birthday,
+            "zipcode":data.zipcode,
+            "address":data.address,
+            "district":data.district,
+            "city":data.city,
+            "state":data.state,
+
+        })
+    }
+
+    selectProfile(uid)
+    {
+        let profile;
+
+        this.db.collection('profile').doc(uid).get()
+        .then((doc)=>{
+
+            profile = doc.data();
+
+        });
+
+        return profile;
+    }
 
 }
 
