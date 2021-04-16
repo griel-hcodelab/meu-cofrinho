@@ -123,10 +123,12 @@ class ClassFirebase
 
     delete(vaultId, uid)
     {
+
+        console.log(vaultId, uid)
         this.db.collection(`vaults/${uid}/vault`).doc(vaultId).delete()
         .then(() => {
 
-            window.location.hash = "#home";
+            //window.location.hash = "#home";
 
         }).catch((error) => {
             console.log(error)
