@@ -22,7 +22,7 @@ document.querySelectorAll("#app").forEach((page)=>{
 
     const logo = page.querySelector("header div.logo");
     logo.addEventListener("click", (e)=>{
-        window.location.hash = "#home";
+        window.location.hash = "#";
     })
     const meuBtn = page.querySelector("header button");
     meuBtn.addEventListener("click", (e)=>{
@@ -37,14 +37,7 @@ document.querySelectorAll("#app").forEach((page)=>{
         })
     }
 
-    const navLinks = page.querySelectorAll("nav a");
-    if (navLinks) {
-        navLinks.forEach((a)=>{
-            a.addEventListener("click",()=>{
-                utils.menuHandler(page.querySelector("nav"));
-            })
-        })
-    }
+
 
     login.getLoginData().onAuthStateChanged((user)=>{
         if (user) {
@@ -88,12 +81,156 @@ document.querySelectorAll("#app").forEach((page)=>{
             const profileSec = page.querySelector("section#profile");
 
             if (profileSec) {
-                const zipcodeElement = profileSec.querySelector("input[name=zipcode]")
-                const birthdayElement = profileSec.querySelector("input[name=birthday]")
+
+                const formElement = profileSec.querySelector("form");
+                const zipcodeElement = formElement.querySelector("input[name=zipcode]");
+                const addressElement = formElement.querySelector("input[name=address]");
+                const districtElement = formElement.querySelector("input[name=district]");
+                const cityElement = formElement.querySelector("input[name=city]");
+                const stateElement = formElement.querySelector("input[name=state]");
+                const birthdayElement = formElement.querySelector("input[name=birthday]");
+                const inputFileElement = formElement.querySelector("#file");
+                const btnSubmit = profileSec.querySelector("footer button[type=submit]");
+
+
                 if (zipcodeElement) {
                     new IMask(zipcodeElement, {
                         mask: '00.000-000'
                     });
+
+                    zipcodeElement.addEventListener("blur", (e)=>{
+
+                        const inputs = [addressElement, districtElement, cityElement, stateElement];
+                        inputs.forEach(input=>{
+                            input.parentElement.classList.add('loading');
+                        })
+
+                        let search = zipcodeElement.value.replace("-","").replace(".","");
+                        const options = {
+                            method: 'GET',
+                            mode: 'cors',
+                            cache: 'default'
+                        }
+                    
+                        fetch(`https://viacep.com.br/ws/${search}/json/`, options)
+                        .then(response =>{ response.json()
+                            .then((json) => {
+                                if (!json.data) {
+                                    addressElement.focus()
+                                }
+                                let logradouro = null;
+                                let bairro = null;
+                                let cidade = null;
+                                let estado = null;
+                                if (json.logradouro) {
+                                    logradouro = json.logradouro;
+                                } else {
+                                    addressElement.focus();
+                                }
+                                if (json.bairro) {
+                                    bairro = json.bairro;
+                                }
+                                if (json.localidade) {
+                                    cidade = json.localidade;
+                                }
+                                switch (json.uf) {
+                                    case "AC":
+                                        estado = "Acre";
+                                        break;
+                                    case "AL":
+                                        estado = "Alagoas";
+                                        break;
+                                    case "AP":
+                                        estado = "Amapá";
+                                        break;
+                                    case "AM":
+                                        estado = "Amazonas";
+                                        break;
+                                    case "BA":
+                                        estado = "Bahia";
+                                        break;
+                                    case "CE":
+                                        estado = "Ceará";
+                                        break;
+                                    case "DF":
+                                        estado = "Distrito Federal";
+                                        break;
+                                    case "ES":
+                                        estado = "Espírito Santo";
+                                        break;
+                                    case "GO":
+                                        estado = "Goiás";
+                                        break;
+                                    case "MA":
+                                        estado = "Maranhão";
+                                        break;
+                                    case "MT":
+                                        estado = "Mato Grosso";
+                                        break;
+                                    case "MS":
+                                        estado = "Mato Grosso do Sul";
+                                        break;
+                                    case "MG":
+                                        estado = "Minas Gerais";
+                                        break;
+                                    case "PA":
+                                        estado = "Pará";
+                                        break;
+                                    case "PB":
+                                        estado = "Paraíba";
+                                        break;
+                                    case "PR":
+                                        estado = "Paraná";
+                                        break;
+                                    case "PE":
+                                        estado = "Pernambuco";
+                                        break;
+                                    case "PI":
+                                        estado = "Piauí";
+                                        break;
+                                    case "RJ":
+                                        estado = "Rio de Janeiro";
+                                        break;
+                                    case "RN":
+                                        estado = "Rio Grande do Norte";
+                                        break;
+                                    case "RS":
+                                        estado = "Rio Grande do Sul";
+                                        break;
+                                    case "RO":
+                                        estado = "Rondônia";
+                                        break;
+                                    case "RR":
+                                        estado = "Roraima";
+                                        break;
+                                    case "SC":
+                                        estado = "Santa Catarina";
+                                        break;
+                                    case "SP":
+                                        estado = "São Paulo";
+                                        break;
+                                    case "SE":
+                                        estado = "Sergipe";
+                                        break;
+                                    case "TO":
+                                        estado = "Tocantins";
+                                        break;
+                                }
+                                utils.setFormValues(formElement, {
+                                    address: logradouro,
+                                    district: bairro,
+                                    city: cidade,
+                                    state: estado,
+                                })
+                                inputs.forEach(input=>{
+                                    input.parentElement.classList.remove('loading');
+                                })
+                            })
+                        })
+                        .catch((e) => {
+                            console.error(e)
+                        })
+                    })
                 }
                 if (birthdayElement) {
                     new IMask(birthdayElement, {
@@ -105,9 +242,7 @@ document.querySelectorAll("#app").forEach((page)=>{
                 const imageElement = profileSec.querySelector("#photo-preview");
                 imageElement.src = user.photoURL || "assets/img/blank-profile.png";
                 const btnChoosePhoto = profileSec.querySelector(".choose-photo");
-                const inputFileElement = profileSec.querySelector("#file");
-                const formElement = profileSec.querySelector("form");
-                const btnSubmit = profileSec.querySelector("footer button[type=submit]");
+
 
                 imageElement.addEventListener("click", (e)=>{
                     inputFileElement.click();
@@ -184,8 +319,10 @@ document.querySelectorAll("#app").forEach((page)=>{
 
                     db.updateProfile(user.uid, utils.getFormValues(formElement))
 
-                    btnSubmit.innerHTML = `					<img src="assets/svg/save.svg" alt="Salvar perfil" />
-					<span>&nbsp;salvar perfil</span>`
+                    btnSubmit.innerHTML = `<img src="assets/svg/save.svg" alt="Salvar perfil" />
+					<span>&nbsp;salvar perfil</span>`;
+
+                    window.location.hash = "#";
                 })
 
                 db.data().collection('profile').doc(user.uid).get()

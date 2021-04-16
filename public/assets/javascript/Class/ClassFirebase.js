@@ -124,11 +124,8 @@ class ClassFirebase
     delete(vaultId, uid)
     {
 
-        console.log(vaultId, uid)
         this.db.collection(`vaults/${uid}/vault`).doc(vaultId).delete()
         .then(() => {
-
-            //window.location.hash = "#home";
 
         }).catch((error) => {
             console.log(error)
@@ -145,8 +142,6 @@ class ClassFirebase
             const sum = [];
 
             document.querySelectorAll("#history span.value_history").forEach((item)=>{
-
-                console.log(item)
 
                 const value = item.innerHTML.replace("R$&nbsp;","").replace(",",".")
                 
@@ -203,7 +198,7 @@ class ClassFirebase
 
         });
 
-        return profile;
+        console.log(profile);
     }
 
 }

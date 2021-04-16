@@ -1,57 +1,97 @@
-#profile {
-    div {
-        &.contents {
-            form {
-                flex-direction: column;
-                padding: var(--space);
+#app {
+    main {
+        section {
+            &#profile {
                 div {
-                    &.photo {
-                        flex-direction: column;
-                        width: 100%;
-                        justify-content: center;
-                        align-items: center;
-                        img {
-                            border-radius: 100%;
-                            max-width: 500px;
-                            height: auto;
-                            width: 100%;
+                    &.contents {
+                        form {
+                            flex-direction: column;
                             padding: var(--space);
-                        }
-                        input[type=file] {
-                            display: none;
-                        }
-                        button {
-                            @include button-green;
+                            width: 100%;
+                            div {
+                                &.photo {
+                                    flex-direction: column;
+                                    width: 100%;
+                                    justify-content: center;
+                                    align-items: center;
+                                    img {
+                                        border-radius: 100%;
+                                        max-width: 500px;
+                                        height: auto;
+                                        width: 100%;
+                                        padding: var(--space);
+                                    }
+                                    input[type=file] {
+                                        display: none;
+                                    }
+                                    button {
+                                        @include button-green;
+                                    }
+                                }
+                                &.fields {
+                                    flex-direction: column;
+                                    width: 100%;
+                                    @include field;
+                                }
+                            }
                         }
                     }
-                    &.fields {
-                        flex-direction: column;
-                        width: 100%;
-                        @include field;
+                }
+                footer {
+                    flex-direction: row;
+                    a {
+                        width: 170px;
+                        margin-right: 40px;
+                        font-size: 20px;
+                        background-color: var(--btn-cancel);
+                        height: 50px;
+                        span {
+                            display: none;
+                        }
+                    }
+                    button {
+                        @include button-green;
                     }
                 }
             }
-        }
-    }
-    footer {
-        flex-direction: row;
-        button {
-            @include button-green;
         }
     }
 }
 
 @media (min-width: 768px) {
-    #profile {
-        div {
-            &.contents {
-                flex-direction: row;
-                form {
-                    flex-direction: row;
+    #app {
+        main {
+            section {
+               &#profile {
+                div {
+                    &.contents {
+                        flex-direction: row;
+                        form {
+                            flex-direction: row;
+                            div {
+                                &.photo {
+                                    justify-content: flex-start;
+                                    img {
+                                        max-width: 320px;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
+                footer {
+                    margin-bottom: 20px;
+                    a {
+                        span {
+                            display: inline;
+                        }
+                    }
+                }
+            } 
             }
         }
     }
+    
 }
 
 

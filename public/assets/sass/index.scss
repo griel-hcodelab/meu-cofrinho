@@ -451,12 +451,16 @@
 				height: inherit;
 				padding: 0;
 				align-items: flex-end;
+				&.open {
+					overflow-x: hidden;
+				}
 				div {
 					flex-direction: column;
 					&.profile {
 						flex-direction: column;
 						justify-content: center;
 						margin-top: -30px;
+						margin-right: 10px;
 						align-items: flex-end;
 						> div {
 							align-items: center;
@@ -510,7 +514,6 @@
             div {
                 &.logo {
                     align-items: center;
-					width: 60%;
                     justify-content: end;
     				margin-left: 10px;
                     img {
