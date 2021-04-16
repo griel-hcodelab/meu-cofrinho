@@ -57,7 +57,9 @@ class ClassDOM
                     <img src="assets/svg/edit.svg" alt="Editar ${item.vault_identify}" />
                     editar seu cofrinho
                 </a>
-                `)
+                `, {
+                    "id":'item'+item.vault_id
+                })
 
                 this.updateEditLinks(item.vault_id)
 
@@ -232,7 +234,7 @@ class ClassDOM
                     backLink.addEventListener("click", (e)=>{
                         e.preventDefault();
                         this.renderVaults()
-                        window.location.hash = "#home";
+                        window.location.hash = "#";
                     })
 
                     
@@ -244,9 +246,10 @@ class ClassDOM
 
                         this.db.delete(id, this.uid)
 
-                        window.location.hash = "#"
+                        document.querySelector(`#item${id}`).remove();
 
-                        window.location.reload();
+                        window.location.hash = "#";
+
                         
                     })
                 }
@@ -258,6 +261,7 @@ class ClassDOM
             
                         this.db.deleteHistory(id, this.uid, btn.id)
 
+                        this.renderVaults()
                         
                     });
                 })

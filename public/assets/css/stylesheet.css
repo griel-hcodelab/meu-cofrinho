@@ -455,6 +455,7 @@ main#login div.overflow section form .wrap button span {
   border-radius: var(--radius);
   width: 100%;
   height: calc(100vh - 86px);
+  justify-content: space-between;
 }
 #app main section.show {
   display: flex;
@@ -622,8 +623,13 @@ main#login div.overflow section form .wrap button span {
   font-size: 20px;
   background-color: var(--btn-cancel);
 }
+#app main section#edit_vault header {
+  justify-content: space-between;
+}
 #app main section#edit_vault header button {
   display: flex;
+  left: inherit;
+  position: inherit;
 }
 #app main section#edit_vault div {
   background-color: var(--white);
@@ -990,6 +996,12 @@ main#login div.overflow section form .wrap button span {
     height: 100vh;
     overflow-x: scroll;
     padding-bottom: 120px;
+  }
+  #app main section#edit_vault header {
+    justify-content: center;
+  }
+  #app main section#edit_vault header button {
+    margin-right: 20px;
   }
   #app main section#edit_vault > div div#history {
     display: grid;
