@@ -7,13 +7,13 @@ const urlsToCache = [
 ]
 
 self.addEventListener('install', function(event){
-    if (e.request.cache === 'only-if-cached' && e.request.mode !== 'same-origin') {
+    if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') {
         return;
       }
     event.waitUntil(
         caches.open('v1')
         .then(function(cache){
-            return cache.addAll(urlsToCache)
+            return cachevent.addAll(urlsToCache)
         })
     );
 });
@@ -23,7 +23,7 @@ self.addEventListener('activate', event => {
 })
 
 self.addEventListener('fetch', event => {
-    if (e.request.cache === 'only-if-cached' && e.request.mode !== 'same-origin') {
+    if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') {
         return;
       }
     event.respondWith(
