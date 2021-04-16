@@ -1,0 +1,135 @@
+#app {
+    main {
+        section {
+            &#profile {
+                div {
+                    &.contents {
+                        form {
+                            flex-direction: column;
+                            padding: var(--space);
+                            width: 100%;
+                            div {
+                                &.photo {
+                                    flex-direction: column;
+                                    width: 100%;
+                                    justify-content: center;
+                                    align-items: center;
+                                    img {
+                                        border-radius: 100%;
+                                        max-width: 500px;
+                                        height: auto;
+                                        width: 100%;
+                                        padding: var(--space);
+                                    }
+                                    input[type=file] {
+                                        display: none;
+                                    }
+                                    button {
+                                        @include button-green;
+                                    }
+                                }
+                                &.fields {
+                                    flex-direction: column;
+                                    width: 100%;
+                                    @include field;
+                                }
+                            }
+                        }
+                    }
+                }
+                footer {
+                    flex-direction: row;
+                    a {
+                        width: 170px;
+                        margin-right: 40px;
+                        font-size: 20px;
+                        background-color: var(--btn-cancel);
+                        height: 50px;
+                        span {
+                            display: none;
+                        }
+                    }
+                    button {
+                        @include button-green;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    #app {
+        main {
+            section {
+               &#profile {
+                div {
+                    &.contents {
+                        flex-direction: row;
+                        form {
+                            flex-direction: row;
+                            div {
+                                &.photo {
+                                    justify-content: flex-start;
+                                    img {
+                                        max-width: 320px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                footer {
+                    margin-bottom: 20px;
+                    a {
+                        span {
+                            display: inline;
+                        }
+                    }
+                }
+            } 
+            }
+        }
+    }
+    
+}
+
+
+/*section {
+    &#profile {
+
+            &.contents {
+                flex-direction: column;
+                form {
+                    flex-direction: column;
+                    width: 100%;
+                    padding: var(--space);
+                    @include field;
+                    &.change_photo {
+                        flex-direction: column;
+                        width: 100%;
+                        img {
+                            padding: 50px;
+                            max-width: 80%;
+                            max-height: 270px;
+                        }
+                        input[type=file] {
+                            display: none;
+                        }
+                        button {
+                            background-color: var(--btn-green);
+                            border: none;
+                            height: 50px;
+                            justify-content: center;
+                            align-items: center;
+                            color: #FFF;
+                            font-size: 20px;
+                            margin: var(--space);
+                            border-radius: var(--radius);
+                        }
+                    }
+                }
+            }
+
+    }
+}*/

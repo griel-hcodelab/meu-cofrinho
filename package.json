@@ -12,6 +12,7 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "compression-webpack-plugin": "^7.1.2",
     "firebase-tools": "^9.1.0",
     "sass": "^1.32.8",
     "webpack": "^5.28.0",
@@ -19,6 +20,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "firebase": "^8.3.2"
+    "cropperjs": "^1.5.11",
+    "firebase": "^8.3.2",
+    "imask": "^6.0.7"
   }
 }
