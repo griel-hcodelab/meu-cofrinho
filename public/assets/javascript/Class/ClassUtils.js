@@ -27,6 +27,30 @@ class Utils
         return values;
     }
 
+    setFormValues(form, values) {
+
+        Object.keys(values).forEach(key => {
+            const field = form.querySelector(`[name=${key}]`);
+    
+            switch(field.type) {
+    
+                case "select":
+                    field.querySelector(`option[value=${values[key]}]`).selected = true;
+                break;
+    
+                case "radio":
+                case "checkbox":                
+                    form.querySelector(`[name=${key}][value=${values[key]}]`).checked = true;
+                break;
+    
+    
+                default:
+                    field.value = values[key];
+                break;
+            }
+        })   
+    }
+
     errorHandler(error)
     {
         switch(error){

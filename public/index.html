@@ -21,8 +21,11 @@
   <meta name="msapplication-TileColor" content="#3C2E80" />
   <meta name="msapplication-TileImage" content="/assets/img/ms-icon-144x144.png" />
   <meta name="theme-color" content="#3C2E80" />
+  <meta name="description" content="Tenha seu cofrinho online e saiba onde você está guardando seu dinheiro." />
   <link rel="preload" href="assets/css/stylesheet.css" as="style" />
   <link rel="stylesheet" href="assets/css/stylesheet.css" />
+  <link rel="preload" href="assets/css/cropper.min.css" as="style" />
+  <link rel="stylesheet" href="assets/css/cropper.min.css" />
   <link rel="preload" href="javascript.js" as="script">
   <title>Meu Cofrinho</title>
 </head>
@@ -147,22 +150,56 @@
 				<h2>seu perfil</h2>
 			</header>
 			<div class="contents">
-				
+				<form>
 				<div class="photo">
-					
+						<img src="assets/img/blank-profile.png" alt="Visualização" id="photo-preview" />
+						<input type="file" name="photo" id="file" />
+
+						<input type="hidden" name="x" />
+						<input type="hidden" name="y" />
+						<input type="hidden" name="width" />
+						<input type="hidden" name="height" />
+		
+						<button type="button" class="choose-photo">Escolher Foto</button>
 				</div>
-				<div class="form">
-					<form id="profile">
-					
-					</form>
+				<div class="fields">
+					<div class="field">
+						<label for="name">Seu nome</label>
+						<input type="text" name="name" id="name" />
+					</div>
+					<div class="field">
+						<label for="birthday">Data de Nascimento</label>
+						<input type="text" name="birthday" id="birthday" />
+					</div>
+					<div class="field">
+						<label for="zipcode">CEP</label>
+						<input type="text" name="zipcode" id="zipcode" />
+					</div>
+					<div class="field">
+						<label for="address">Seu endereço</label>
+						<input type="text" name="address" id="address" />
+					</div>
+					<div class="field">
+						<label for="district">Seu bairro</label>
+						<input type="text" name="district" id="district" />
+					</div>
+					<div class="field">
+						<label for="city">Sua cidade</label>
+						<input type="text" name="city" id="city" />
+					</div>
+					<div class="field">
+						<label for="state">Seu estado</label>
+						<input type="text" name="state" id="state" />
+					</div>
 				</div>
 				
 			</div>
 			<footer>
 				<button type="submit">
 					<img src="assets/svg/save.svg" alt="Salvar perfil" />
-					<span>salvar perfil</span>
+					<span>&nbsp;salvar perfil</span>
 				</button>
+				</form>
 			</footer>
 		</section>
 	</main>
