@@ -56,9 +56,6 @@ class ClassFirebase
             this.utils.clearAllInputs();
         })
 
-        /**
-         * vault_identify: "fdsfds", vault_value: "3232", vault_description: "fdsfsdfds"
-         */
     }
 
     select(vaultId, uid)
