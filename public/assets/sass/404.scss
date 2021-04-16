@@ -1,0 +1,32 @@
+#app {
+    main {
+        align-items: center;
+        section {
+            &.page-404 {
+                display: flex;
+                background-color: var(--white);
+                background-image: url("../img/404.png");
+                background-repeat: no-repeat;
+                background-size: 150px;
+                background-position-x: 100%;
+                background-position-y: 100%;
+                justify-content: flex-start;
+                padding: 30px;
+                height: calc(100vh - 125px);
+                max-width: 530px;
+                a {
+                    display: inline;
+                    &.back {
+                        background-color: #00800069;
+                        padding: 20px;
+                        color: #000;
+                        font-weight: 700;
+                        border-radius: var(--space);
+                        max-width: 200px;
+                    }
+                }
+            }
+
+        }
+    }
+}
