@@ -7,10 +7,10 @@
       "**/node_modules/**"
     ]
   },
-  "apiKey": "AIzaSyBcegZP4So6J782xtQa5OE53904efXM5l0",
+  "apiKey": "-",
   "authDomain": "seu-cofrinho.firebaseapp.com",
   "projectId": "seu-cofrinho",
   "storageBucket": "seu-cofrinho.appspot.com",
   "messagingSenderId": "965473413399",
-  "appId": "1:965473413399:web:03fc625cac3e6d161aaf52"
+  "appId": "-"
 }
